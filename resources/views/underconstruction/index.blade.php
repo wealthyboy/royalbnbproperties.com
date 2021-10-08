@@ -52,11 +52,11 @@
   <![endif]-->
 
 </head>
-<body data-spy="scroll" data-target=".scrollspy" class="bg-dark show-content full-info">
+<body data-spy="scroll" data-target=".scrollspy" class="bg-dark">
 
 <!-- Preloader  -->
 <div class="loader bg-dark">
-  <div class="loader-inner ball-scale-ripple-multiple ball-scale-ripple-multiple-color">
+  <div class="loader-inner ball-scale-ripple-multiple ball-scale-ripple-multiple-bw">
     <div></div>
     <div></div>
     <div></div>
@@ -72,11 +72,11 @@
   ================================= -->
 
   <!-- Image BG -->
-  <div class="section-overlay media page-image-full reveal scale-in"></div>
+  <div class="section-overlay media page-image-bw reveal scale-in"></div>
   <!-- /End Image BG -->
 
   <!-- Overlay BG -->
-  <div class="section-overlay bg-black overlay-opacity"></div>
+  <div class="section-overlay bg-black overlay-opacity-3"></div>
   <!-- /End Overlay BG -->
 
   <!-- Modal -->
@@ -121,7 +121,7 @@
                        name="email"
                        placeholder="Enter your Email here...">
                   <span class="input-group-btn">
-                    <button type="submit" class="btn btn-color"><i
+                    <button type="submit" class="btn btn-white"><i
                         class="icon icon-sm icon-arrows-slim-right-dashed"></i>
                     </button>
                   </span>
@@ -157,8 +157,16 @@
     <nav class="navbar navbar-fixed-top">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6 text-white col-transform">
+          <div class="col-md-12 text-white col-transform">
             <div class="navbar-wrapper">
+
+              <!-- Navbar Button -->
+              <button class="navbar-button show-info" data-href="#content">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+              <!-- /End Navbar Button -->
 
               <!-- Navbar Links -->
               <div class="navbar-links scrollspy">
@@ -184,26 +192,23 @@
            Info
       ================================= -->
 
-      <div id="info" class="col-md-6 text-white text-center page-info col-transform">
+      <div id="info" class="col-md-12 text-white text-center page-info col-transform">
         <div class="vert-middle">
           <div class="reveal scale-out">
 
-            <!-- Count Down -->
-            <!-- <div class="count-down p-t-b-15" data-end-date="May 30, 2021 00:00:00">
-            </div> -->
-            <!-- /End Count Down -->
-
             <!-- Logo -->
-            <!-- <div class="p-t-b-15">
-              <img src="images/logo.png" height="60" width="49" alt="">
-            </div> -->
+            <div class="p-t-b-15">
+              <img src="https://royalbnbproperties.com/uploads/MLC4TLmEKqndCOICWFbxJSqMPSWbXdw5C3k5gGar.jpg" height="86" width="70" alt="">
+            </div>
             <!-- /End Logo -->
 
             <div class="p-t-b-15">
               <!-- Headline & Description -->
-              <h2><span class="font-weight-200">Our Website</span><br>is coming soon</h2>
+              <h2><span class="font-weight-200">We're launching our</span><br>new Website</h2>
 
-              
+              <p><br>We're
+                working hard to give you the best experience!<br>
+              </p>
               <!-- /End Headline & Description -->
             </div>
             <!-- Arrow -->
@@ -214,23 +219,26 @@
 
             <!-- Buttons -->
             <div class="p-t-b-15 btn-row">
-              <button class="btn btn-color" data-toggle="modal"
+              <button class="btn btn-white" data-toggle="modal"
                       data-target="#modal-notify"
                       role="button">Notify me
               </button>
+              <a class="btn btn-border-white show-info"
+                 role="button" data-href="#content">
+                More info
+              </a>
             </div>
             <!-- /End Buttons -->
 
             <!-- Social Media Links -->
-            <!-- <div class="p-t-b-30">
+            <div class="p-t-b-30">
               <p>
-                <a href="https://www.facebook.com/#" class="link-white"><i
+                <a href="https://www.facebook.com/" class="link-white"><i
                     class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/#" class="link-white"><i
+                <a href="https://twitter.com/egotype" class="link-white"><i
                     class="fa fa-twitter"></i></a>
-                
               </p>
-            </div> -->
+            </div>
             <!-- Social Media Links -->
 
           </div>
@@ -260,27 +268,21 @@
 
               <!-- Description -->
               <div class="p-t-b-15  text-grey">
-                <p>We are a privately owned hospitality real estate firm developing real  estate products for the hospitality and short-let market.  <br/>
-
-We also broker and work with real estate developers and hospitality brands in the budget, mid-market and full service hotel sector. Seeking to establish their presence in the local market. <br/>
-Our properties are developed wholly-owned or via our rent-to-use solutions.<br/>
-Our backgrounds of extensive global hospitality and real estate experience and reliable access to local and international finance, helps us to engage in transactions of varying sizes and complexity and is totally committed to delivering the highest standards of service to its partners, stakeholders and clients 
-<br>
-                  </p>
+                <p>Our mission is to provide our customers with the highest level of quality service of any Real Estate company at a very affordable rate thereby ensuring that properties are sold or leased in a flawless manner. We strive to deliver professional services to clients and customers so that transactions are completed to the satisfaction of all concerned.”</p>
               </div>
               <!-- /End Description -->
 
               <!-- Social Media Links -->
-              <!-- <div class="p-t-b-15">
+              <div class="p-t-b-15">
                 <p>
-                  <a href="https://www.facebook.com/#" target="_blank">
+                  <a href="https://www.facebook.com/royalbnbproperties" target="_blank">
                     <i class="fa fa-facebook"></i></a>
-                  <a href="https://twitter.com/#" target="_blank">
+                  <a href="https://twitter.com/royalbnbproperties" target="_blank">
                     <i class="fa fa-twitter"></i></a>
-                  <a href="https://www.instagram.com/#" target="_blank">
+                  <a href="https://www.instagram.com/royalbnbproperties" target="_blank">
                     <i class="fa fa-instagram"></i></a>
                 </p>
-              </div> -->
+              </div>
               <!-- /End Social Media Links -->
 
             </div>
@@ -291,56 +293,44 @@ Our backgrounds of extensive global hospitality and real estate experience and r
 
             <!-- Image 1 -->
             <figure class="col-xs-6 img-hover-effect">
-              <a href="/maintainance/images/page-image-5.jpg"
+              <a href="https://royalbnbproperties.com/uploads/R3DxvKHrMoDy8ib2uoeo4X3yWMzjejiMoIiUMPoz.jpg"
                  data-size="900x600">
-                <img class="img-responsive" src="/maintainance/images/page-image-5.jpg"
+                <img class="img-responsive" src="https://royalbnbproperties.com/uploads/R3DxvKHrMoDy8ib2uoeo4X3yWMzjejiMoIiUMPoz.jpg"
                      alt="Image description"/>
               </a>
 
-              <span class="img-title"></span>
-              <span class="img-description"></span>
-              <span class="img-overlay"></span>
             </figure>
             <!-- /End Image 1 -->
 
             <!-- Image 2 -->
             <figure class="col-xs-6 img-hover-effect">
-              <a href="/maintainance/images/page-image-6.jpg"
+              <a href="https://royalbnbproperties.com/uploads/tlsu10XUQd7Qf4lDZ4pmsSQcc3pzalSRxEKZi9hs.jpg"
                  data-size="900x600">
-                <img class="img-responsive" src="/maintainance/images/page-image-6.jpg"
+                <img class="img-responsive" src="https://royalbnbproperties.com/uploads/tlsu10XUQd7Qf4lDZ4pmsSQcc3pzalSRxEKZi9hs.jpg"
                      alt="Image description"/>
               </a>
 
-              <span class="img-title"></span>
-              <span class="img-description"></span>
-              <span class="img-overlay"></span>
             </figure>
             <!-- /End Image 2 -->
 
             <!-- Image 3 -->
             <figure class="col-xs-6 img-hover-effect">
-              <a href="/maintainance/images/page-image-7.jpg"
+              <a href="https://royalbnbproperties.com/uploads/d42Yqh18SeNtH7p41BOePzmk63Y85xxSr1J4VVwJ.jpg"
                  data-size="900x600">
-                <img class="img-responsive" src="/maintainance/images/page-image-7.jpg"
+                <img class="img-responsive" src="https://royalbnbproperties.com/uploads/d42Yqh18SeNtH7p41BOePzmk63Y85xxSr1J4VVwJ.jpg"
                      alt="Image description"/>
               </a>
 
-              <span class="img-title"></span>
-              <span class="img-description"></span>
-              <span class="img-overlay"></span>
             </figure>
             <!-- /End Image 3 -->
 
             <!-- Image 4 -->
             <figure class="col-xs-6 img-hover-effect">
-              <a href="/maintainance/images/page-image-4.jpg"
+              <a href="https://royalbnbproperties.com/uploads/R3DxvKHrMoDy8ib2uoeo4X3yWMzjejiMoIiUMPoz.jpg"
                  data-size="900x600">
-                <img class="img-responsive" src="/maintainance/images/page-image-4.jpg"
+                <img class="img-responsive" src="https://royalbnbproperties.com/uploads/R3DxvKHrMoDy8ib2uoeo4X3yWMzjejiMoIiUMPoz.jpg"
                      alt="Image description"/>
               </a>
-              <span class="img-title"></span>
-              <span class="img-description"></span>
-              <span class="img-overlay"></span>
             </figure>
             <!-- /End Image 4 -->
 
@@ -354,7 +344,7 @@ Our backgrounds of extensive global hospitality and real estate experience and r
              Contact Section
         --------------------------------- -->
 
-        <section id="contact" class="p-t-30">
+        <section id="contact" class="p-t-b-30">
           <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
 
@@ -370,6 +360,7 @@ Our backgrounds of extensive global hospitality and real estate experience and r
                   Please stay updated and follow.</p>
               </div>
               <!-- /End Description -->
+
 
               <!-- Arrow -->
               <div class="p-t-b-40">
@@ -394,7 +385,9 @@ Our backgrounds of extensive global hospitality and real estate experience and r
                   <!-- Address -->
                   <div class="p-t-b-15">
                     <h4>Address</h4>
-                    <p>16b, Adewunmi Adebimpe Street Lekki Phase 1, Lagos Nigeria</p>
+
+                    <p>Lekki<br>
+                      </p>
                   </div>
                   <!-- /End Address -->
 
@@ -412,7 +405,7 @@ Our backgrounds of extensive global hospitality and real estate experience and r
                   <div class="p-t-b-15">
                     <h4>Direct</h4>
 
-                    <p>T. <a href="tel:+234(1)4535942">+234(1)4535942</a><br>
+                    <p>T. <a href="#">Tel: +234 913 464 6464</a><br>
                   </div>
                   <!-- /End Address -->
 
@@ -428,19 +421,14 @@ Our backgrounds of extensive global hospitality and real estate experience and r
 
                   <!-- Address -->
                   <div class="p-t-b-15">
-                    <h4>Email</h4>
 
-                    <p><a href="mailto:">info@myshortlet.com</a><br>
+                    <p><a href="mailto:">support@royalbnbproperties.com</a><br>
                   </div>
                   <!-- /End Address -->
 
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="row no-gutters p-t-30 map">
-            <div id="map" class="col-sm-12"></div>
           </div>
 
           <!-- Contact Alert -->
@@ -459,7 +447,6 @@ Our backgrounds of extensive global hospitality and real estate experience and r
 </div>
 <!-- /#page -->
 <div id="photoswipe"></div>
-
 <!-- Scripts -->
 <script src="/maintainance/js/plugins/jquery1.11.2.min.js"></script>
 <script src="/maintainance/js/plugins/bootstrap.min.js"></script>
