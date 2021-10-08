@@ -896,11 +896,13 @@ header {
 }
 
 .page-image-bw {
-  background: url("../images/page-image-bw.jpg") no-repeat center center;
+  /* background: url("https://royalbnbproperties.com/uploads/R3DxvKHrMoDy8ib2uoeo4X3yWMzjejiMoIiUMPoz.jpg")
+    no-repeat center center; */
   background-size: cover;
   height: 100%;
   width: 100%;
   min-height: 700px;
+  background-color: gold;
 }
 
 .page-slide {

@@ -70,13 +70,13 @@
   <!-- ============================
        BG & Overlays
   ================================= -->
-
+  <div class="overlay" />
   <!-- Image BG -->
   <div class="section-overlay media page-image-bw reveal scale-in"></div>
   <!-- /End Image BG -->
 
   <!-- Overlay BG -->
-  <div class="section-overlay bg-black overlay-opacity-3"></div>
+  <div class="section-overlay bg-black page-image-bw overlay-opacity-3"></div>
   <!-- /End Overlay BG -->
 
   <!-- Modal -->
@@ -108,11 +108,6 @@
 
           <div class="p-t-b-30">
 
-            <!-- Newsletter Form:
-             alternative newsletter form via email;
-             write your email in newsletter-process.php and use:
-             <form action="php/newsletter-process.php" id="newsletter-form" method="post"> insted of
-             <form id="mc-form"> -->
             <form id="mc-form">
 
               <!-- Input Group -->
@@ -291,15 +286,7 @@
           <!-- Gallery -->
           <div class="gallery row no-gutters p-t-b-30">
 
-            <!-- Image 1 -->
-            <figure class="col-xs-6 img-hover-effect">
-              <a href="https://royalbnbproperties.com/uploads/R3DxvKHrMoDy8ib2uoeo4X3yWMzjejiMoIiUMPoz.jpg"
-                 data-size="900x600">
-                <img class="img-responsive" src="https://royalbnbproperties.com/uploads/R3DxvKHrMoDy8ib2uoeo4X3yWMzjejiMoIiUMPoz.jpg"
-                     alt="Image description"/>
-              </a>
-
-            </figure>
+            
             <!-- /End Image 1 -->
 
             <!-- Image 2 -->
@@ -324,15 +311,6 @@
             </figure>
             <!-- /End Image 3 -->
 
-            <!-- Image 4 -->
-            <figure class="col-xs-6 img-hover-effect">
-              <a href="https://royalbnbproperties.com/uploads/R3DxvKHrMoDy8ib2uoeo4X3yWMzjejiMoIiUMPoz.jpg"
-                 data-size="900x600">
-                <img class="img-responsive" src="https://royalbnbproperties.com/uploads/R3DxvKHrMoDy8ib2uoeo4X3yWMzjejiMoIiUMPoz.jpg"
-                     alt="Image description"/>
-              </a>
-            </figure>
-            <!-- /End Image 4 -->
 
           </div>
           <!-- /End Gallery -->
@@ -386,7 +364,7 @@
                   <div class="p-t-b-15">
                     <h4>Address</h4>
 
-                    <p>Lekki<br>
+                    <p>No 4 Ikota, Road 1, Ikota school, opp lekki county,  Lekki-Ajah express way<br>
                       </p>
                   </div>
                   <!-- /End Address -->
@@ -422,7 +400,7 @@
                   <!-- Address -->
                   <div class="p-t-b-15">
 
-                    <p><a href="mailto:">support@royalbnbproperties.com</a><br>
+                    <p><a href="mailto:">info@royalbnbproperties.com</a><br>
                   </div>
                   <!-- /End Address -->
 
