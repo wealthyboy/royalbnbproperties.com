@@ -138,9 +138,6 @@ Route::post('book/coupon',    'Booking\BookingController@coupon');
 Route::post('/api/saved',   'Api\Favorites\FavoritesController@store');
 Route::resource('reservations',   'Reservation\ReservationController',['names' => 'reservations']);
 
-
-
-
 Route::get('get/location/{id}', 'Properties\PropertiesController@getLocation');
 Route::resource('properties',   'Properties\PropertiesController',['name' => 'properties']);
 
