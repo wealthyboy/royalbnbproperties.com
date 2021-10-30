@@ -44,8 +44,8 @@ class BookingController extends Controller
 
 		if (null == $bookings){
 			return back();
-
 		}
+		
 		$ids = $bookings->pluck('id')->toArray();
 		$booking = $bookings[0];
 		$nights = [];
@@ -89,11 +89,14 @@ class BookingController extends Controller
 
 
 		$ap_ids = [];
+
+		$value = bcrypt('^%&#*$((j1a2c3o4b5@+-40');
+		session()->put('booking',$value);
+		$cookie = cookie('booking',session()->get('booking'), time() + 86400);
 		
         foreach ($apartment_quantity as $key => $apartments) {
 			foreach ($apartments as $apartment_id => $quantity) {
 				$booking = new BookingDetail;
-
 			   $ap = Apartment::find($apartment_id);
 			   $price = optional($ap)->converted_price;
 			   $sale_price = optional($ap)->discounted_price;
@@ -116,9 +119,6 @@ class BookingController extends Controller
 					);
 				}  else  {
 
-					$value = bcrypt('^%&#*$((j1a2c3o4b5@+-40');
-					session()->put('booking',$value);
-					$cookie = cookie('booking',session()->get('booking'), time() + 86400);
 					$booking->apartment_id   = $ap->id;
 					$booking->quantity       = $quantity;
 					$booking->property_id    = $request->property_id;
@@ -136,9 +136,8 @@ class BookingController extends Controller
 
 		}
 
-		dd(\Cookie::get('booking'));
+		//dd(\Cookie::get('booking'));
 
-		$cookie = \Cookie::get('booking');
 		return response()->json([
 			'msg' => 'Reservation sucessfully added'
 		],200)->withCookie($cookie);
