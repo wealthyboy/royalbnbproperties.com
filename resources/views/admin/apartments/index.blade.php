@@ -9,9 +9,17 @@
                 <i class="material-icons">refresh</i>
                 Refresh
             </a>
-            <a href="{{ route('admin.properties.create') }}" rel="tooltip" title="Add New" class="btn btn-primary btn-simple btn-xs">
+            <a href="{{ route('admin.properties.create', ['mode'=>'lands'] ) }}" rel="tooltip" title="Add New" class="btn btn-primary btn-simple btn-xs">
                 <i class="material-icons">add</i>
-                Add Property
+                Add Land
+            </a>
+            <a href="{{ route('admin.properties.create', ['mode'=>'house'] ) }}" rel="tooltip" title="Add New" class="btn btn-primary btn-simple btn-xs">
+                <i class="material-icons">add</i>
+                Add House for sale/Add House for rent
+            </a>
+            <a href="{{ route('admin.properties.create', ['mode'=>'shortlet']) }}" rel="tooltip" title="Add New" class="btn btn-primary btn-simple btn-xs">
+                <i class="material-icons">add</i>
+                Add Shortlet
             </a>
             <a href="javascript:void(0)" onclick="confirm('Are you sure?') ? $('#form-apartments').submit() : false;" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
                 <i class="material-icons">close</i>
@@ -89,8 +97,6 @@
                                             </label>
                                         </div>
                                     </td>
-                                    <!-- cart-active -->
-                                    <!-- cart-sidebar-btn active -->
                                     <td>
                                         <div class="img-container">
                                             <img class="" src="{{  $property->image  }}" alt="...">
@@ -103,7 +109,7 @@
                                         </span> 
                                     </td>
                                     <td class="td-actions ">                     
-                                        <a href="{{ route('admin.properties.edit',['property'=>$property->id] ) }}" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
+                                        <a href="{{ route('admin.properties.edit',['property'=>$property->id,'mode' => $property->mode ] ) }}" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
                                             <i class="material-icons">edit</i>
                                             Edit
                                         </a>

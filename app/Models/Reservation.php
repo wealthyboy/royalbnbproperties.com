@@ -21,4 +21,14 @@ class Reservation extends Model
     {
         return $this->belongsTo(Apartment::class);
     }
+
+    public function property()
+    {
+        return $this->belongsTo(Property::class);
+    }
+
+    public function extras()
+    {
+        return $this->hasMany(Extra::class);
+    }
 }

@@ -1,30 +1,8 @@
 <template>
   <form method="GET" action="/property/search">
     <div class="form-row">
-      <div class="form-group form-border search   col-md-3 mr-1">
-        <label class="pl-4" for="Location-input">Location</label>
-        <div class="input-group input-group-lg">
-          <div class="input-group-prepend">
-            <span
-              class="input-group-text  border-0 text-muted fs-18"
-              id="inputGroup-sizing-lg"
-            >
-              <i class="fas fa-map-marker-alt"></i>
-            </span>
-          </div>
-          <input
-            type="text"
-            class="form-control ml-2 location-search"
-            name="going_to"
-            id="Location-input"
-            placeholder="Where are you going"
-            v-model="form.location"
-          />
-        </div>
-      </div>
-
       <div
-        class="form-group  form-border cursor-pointer search col-md-4 bmd-form-group"
+        class="form-group  form-border cursor-pointer search col-md-5 bmd-form-group"
       >
         <label class="pl-2 ml-4" for="flatpickr-input-f"
           >Check-in - Check-out</label
@@ -32,10 +10,10 @@
         <date-range />
       </div>
 
-      <div id="people-number" class="col-md-3  cursor-pointer">
+      <div id="people-number" class="col-md-5  cursor-pointer">
         <guests />
       </div>
-      <div class="col-md-1">
+      <div class="col-md-2">
         <template v-if="!reload">
           <button
             type="button"
@@ -47,7 +25,7 @@
         </template>
         <template v-if="reload">
           <button type="submit" class="btn btn-primary btn-block">
-            <i class="material-icons">search</i>
+            <i class="fas fa-search"></i>
           </button>
         </template>
       </div>

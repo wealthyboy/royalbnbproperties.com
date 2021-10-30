@@ -1,74 +1,51 @@
-@extends('layouts.user')
+@extends('layouts.listing')
 @section('content')
-<div class="container-fluid">
-   <div class="row">
-      <div class="col-md-12 ml-auto mr-auto">
-        <div class="text-right">
-            <a href="{{ route('properties.index') }}" rel="tooltip" title="Refresh" class="btn btn-primary btn-simple btn-xs">
-                <i class="material-icons">refresh</i>
-                Refresh
-            </a>
-            <a href="{{ route('properties.create') }}"  title="Add New" class="btn btn-primary btn-simple btn-xs">
-                    <i class="material-icons">add</i>
-                    Add Property
-            </a>
-            
-
+<div class="d-flex  justify-content-center align-items-center" >
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12 ml-auto mr-auto">
+            @if( isset($category) && strtolower($category->name)  == 'short-let')
+               <category-search  :reload="0" />
+            @else
+               <location  />
+            @endif
          </div>
-         <h2 class="title"></h2>
-         @include('includes.success')
-         @if ( $properties->count())
-         @foreach( $properties as $property)
-         <div class="card card-plain border">
-            <div class="row">
-               <div class="col-md-2">
-                  <div class="card-header card-header-image">
-                     <img class="img img-raised" src="{{ $property->image_m }}">
-                  </div>
-               </div>
-               <div class="col-md-7">
-                  <h6 class="card-category text-info">{{ $property->status }}</h6>
-                  <h3 class="card-title">
-                     <a href="#">{{ $property->name }}</a>
-                  </h3>
-                  <div class="">
-                  </div>
-                  <div class="">
-                     {{ $property->address }}                     
-                  </div>
-                  <p>
-                     @if( $property->apartments->count() && $property->apartments->count() >  1  )
-                     <span class="text-heading lh-15 font-weight-bold fs-17">{{ $property->currency }}{{ $property->apartments->single_room->price }}  - {{ $property->currency }}{{ $property->apartments[$property->apartments->count() - 1]->first()->price }} </span>
-                     @else
-                     <span class="text-heading lh-15 font-weight-bold fs-17">{{ $property->currency }}{{ optional(optional($property->apartments)->first())->price }}</span>
-                     @endif
-                     <span class="text-gray-light">/month</span>
-                  </p>
-               </div>
-               <div class="col-md-3  d-flex justify-content-senter align-items-center">
-                  <a href="" class="btn btn-primary  btn-link ">
-                  <i class="material-icons">edit</i> Edit
-                  </a>
-                  <a href="" class="btn btn-primary  btn-link ">
-                  <i class="material-icons">delete_forever</i> delete
-                  </a>
-               </div>
-            </div>
-         </div>
-         @endforeach
-         @else
-         <div class="no-apartments">
-            <div class=" d-flex justify-content-center fa-2x"  >
-               <div class="text-center pb-3">
-                  <i class="material-icons display-1">apartment</i>
-                  <p class="bold">You have not added any property.</p>
-               </div>
-            </div>
-         </div>
-         @endif
       </div>
    </div>
 </div>
+<div   class="container-fluid {{ $properties->count() < 1 ? 'full-bg' : '' }} position-relative">   
+
+   <div class="sidebar-toggle d-block d-sm-none ">  <i class="material-icons filter adjust">sort</i> filter</div>
+   <div class="sidebar-overlay d-none"></div>
+   <div class="row no-gutters ">
+      <div class="col-12">
+         <properties-count    />
+      </div>
+
+      @if ($properties->count() < 1)
+      <div  id="load-products" class="col-md-10 pl-1 d-flex justify-content-center  align-items-center">
+         <div class="no-properties-found ">
+            <div class="text-center">
+               <i class="fas fa-home fa-5x"></i>
+               <p>We could not match any properties to your search</p>
+            </div>
+         </div>
+      </div>
+      @else
+         <div class="col-md-3 pr-2 mobile-sidebar">
+            <div class=" bg-white  sidebar-section">
+               <filter-search :category="{{ isset($category) ? $category : '{}' }}" :locations="{{ $locations }}" :attrs="{{ $attributes }}" />
+            </div>
+         </div>
+         <div  id="load-products" class="col-md-9 pl-1 mb-5">
+            <products-index :next_page="{{ collect($next_page) }}" :propertys="{{ $properties->load('facilities','free_services') }}" />
+         </div>
+      @endif
+
+      
+   </div>
+</div>
+   
 @endsection
 @section('page-scripts')
 @stop

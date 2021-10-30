@@ -117,8 +117,16 @@
                     <ul class="nav">
                         <li class="{{ $helper->active_link(['apartments']) }} ">
                            <a href="{{ route('admin.properties.index') }}">
-                                <span class="sidebar-mini"> R </span>
-                                <span class="sidebar-normal"> Properties </span>
+                                <span class="sidebar-mini"> A </span>
+                                <span class="sidebar-normal"> Apartments </span>
+                            </a>
+                        </li>
+
+
+                        <li class="{{ $helper->active_link(['apartments']) }} ">
+                           <a href="{{ route('admin.properties.index',['land' => true ]) }}">
+                                <span class="sidebar-mini"> L </span>
+                                <span class="sidebar-normal"> Land/House </span>
                             </a>
                         </li>
 

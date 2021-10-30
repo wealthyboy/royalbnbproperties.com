@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
 <!-- Carousel Card -->
 <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
    <div class="carousel-inner">
@@ -34,14 +33,14 @@
 <div class="search-box">
    <div class="container">
       <div class="row">
-         <div class="col-md-12 ml-auto mr-auto">
+         <div class="col-md-10 ml-auto mr-auto">
             <div class="card card-raised card-form-horizontal">
                <div class="col-md-8 text-left">
                   <div class="card-title">Find deals on Apartment homes...</div>
                   <div>From cosy country homes to funky city flats</div>
                </div>
                <div class="card-body ">
-                 <category-search  :reload="1" />
+                  <location  :reload="1" />
                </div>
             </div>
          </div>
@@ -49,87 +48,61 @@
    </div>
 </div>
 <div class="container-fluid mt-3 position-relative">
-   <section class="pt-9 pt-xl-7 pb-6">
-      <div class="">
-         <div class="row">
-            <div class="col-md-6">
-               <h2 class="text-heading">Cool Plus stays</h2>
-               <span class="heading-divider"></span>
-               <p class="mb-6">Where Avm  members are staying and saving</p>
-            </div>
-            <div class="col-md-6 text-md-right">
-               <a href="" class="btn btn-lg text-secondary btn-accent rounded-lg mb-6">See all properties
-               <i class="far fa-long-arrow-right ml-1"></i>
-               </a>
-            </div>
-         </div>
-         <div class="row no-gutters">
-            @foreach( $featureds as $featured)
-            <div class="col-lg-3 col-xl-3 custom-col-5-xl-to-xxl mb-6 pr-1 pl-1" >
-               <div class="card card-profile card-plain mb-3 position-relative">
-                  <a href="/apartment/{{ $featured->slug }}">
-                  <img class="card-img-top" src="{{ optional($featured)->image_m }}" rel="nofollow" alt="Card image cap">
-                  </a>
-                  <div class="fav-icon position-absolute">
-                     @include('_partials.saved',['obj'=> $featured])
-                  </div>
-                  <div class="card-body p-1">
-                     <a href="/property/{{ $featured->slug }}">
-                        <h4 class="card-title">{{ optional($featured)->name }}</h4>
-                        <p class="card-text"></p>
+   
+@if($cities->count())
+   <div class="row">
+      <div class="col-md-12">
+         <h2>Explore what's nearby</h2>
+         <p>Here's where to go if you're looking to plan a city break itinerary filled with memorable cultural experiences.</p>
+      </div>
+
+      @foreach( $cities as $city )
+      <div class="col-sm-3 text-center">
+         <a href="http://">
+            <img src="{{ $city->image }}" alt="Thumbnail Image" class="img-raised  img-fluid">
+            <h4>{{ $city->name }}</h4>
+         </a>
+      </div>
+      @endforeach
+
+   </div>
+@endif
+
+
+
+   
+
+   @if($banners->count())
+   <div class="row">
+      <div class="col-md-12">
+         <h2>Browse by category</h2>
+         <p>Here's where to go if you're looking to plan a city break itinerary filled with memorable cultural experiences.</p>
+      </div>
+      @foreach( $banners as $banner )
+         <div class="{{ $banner->col }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} ">
+            <a href="">
+               <div class="card card-background header-filter" style="background-image: url('{{ $banner->image }}')">
+                  <div class="card-body">
+                     <h3 class="card-title">{{ $banner->title }}</h3>
+                     <a href="#" class="btn btn-danger btn-round">
+                        <i class=""></i> View More
                      </a>
                   </div>
                </div>
-            </div>
-            @endforeach
+           </a>
          </div>
-      </div>
-   </section>
+      @endforeach
+   </div>
+   @endif
 
-   
    <div class="row no-gutters">
-      <div class="col-md-12">
-         <h2>Explore nearby</h2>
-         <p>See the top destinations people are traveling to</p>
+      <div class="col-12">
+         
       </div>
-      @if ($cities->count())
-      @foreach($cities as $city)
-      <div class="col-lg-3  pr-1 pl-1" >
-         <div class="card card-profile card-plain position-relative">
-            <a href="/apartments/{{ $city->slug }}">
-            <img class="card-img-top" src="{{ optional($city)->image }}" rel="nofollow" alt="Card image cap">
-            </a>
-            <div class="card-body p-1">
-               <a href="/apartments/{{ $city->slug }}">
-                  <h4 class="card-title">{{ optional($city)->name }}</h4>
-                  <p class="card-text"></p>
-               </a>
-            </div>
-         </div>
-      </div>
-      @endforeach
-      @endif
    </div>
-   <div class="row">
-      <div class="col-md-12">
-         <h2> Top destinations</h2>
-         <p>See the top destinations people are traveling to</p>
-      </div>
-      @if ($states->count())
-      @foreach($states as $state)
-      <div class="col-md-4">
-         <div class="card bg-dark text-white">
-            <a href="/apartments/{{ $state->slug }}">
-               <img class="card-img" src="{{ $state->image }}" rel="nofollow" alt="Card image">
-               <div class="card-img-overlay">
-                  <h4 class="card-title">{{ $state->name }} properties</h4>
-               </div>
-            </a>
-         </div>
-      </div>
-      @endforeach
-      @endif
-   </div>
+
+
+
    <div class="clearfix"></div>
    @if ($posts->count()) 
    <div class="row">
@@ -155,12 +128,7 @@
       @endforeach
    </div>
    @endif
+
+
 </div>
-@include('_partials.svg')
-
-
-
-
 @endsection
-@section('page-scripts')
-@stop

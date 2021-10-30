@@ -13,7 +13,6 @@
       <link rel="apple-touch-icon" href="/img/favicon-96x96.png">
       <!-- CSS -->
       <!-- Main CSS File -->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
       <link href="/css/services_style.css?version={{ str_random(6) }}" rel="stylesheet">
       @yield('page-css')
@@ -27,6 +26,8 @@
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:title" content="{{ isset($page_meta_description) ? $page_meta_description : $system_settings->meta_description }}">
       <meta name="twitter:description" content="{{ isset($page_meta_description) ? $page_meta_description : $system_settings->meta_description }}">
+      <script src="/js/popper.min.js"></script>
+
       <script>
          Window.user = {
          	user: {!! auth()->check() ? auth()->user() : 0000 !!},

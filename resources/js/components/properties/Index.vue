@@ -18,6 +18,9 @@
             </div>
           </div>
           <div class="col-md-9 position-relative col-12 pl-3">
+            <h6 class="card-category text-info">
+              {{ property.categories[0].name }}
+            </h6>
             <div class="d-flex  justify-content-between">
               <div>
                 <a target="_blank" :href="property.link">{{ property.name }}</a>
@@ -68,29 +71,31 @@
                 <div class="d-inline-flex">
                   <template v-if="property.default_discounted_price">
                     <div class="sale-price mr-3">
-                      {{ property.currency }}{{ property.converted_price }}
+                      {{ property.currency
+                      }}{{ property.converted_price | priceFormat }}
                     </div>
                     <div class="price">
-                      {{ property.currency
-                      }}{{ property.default_discounted_price }}
+                      {{ property.currency }}
+                      {{ property.default_discounted_price | priceFormat }}
                     </div>
                   </template>
                   <template v-else>
                     <div class="price">
-                      {{ property.currency }}{{ property.converted_price }}
+                      {{ property.currency
+                      }}{{ property.converted_price | priceFormat }}
                     </div>
                   </template>
                 </div>
-                <div>per night</div>
+                <div>{{ property.price_mode }}</div>
                 <div v-if="property.is_refundable">Fully Refundable</div>
                 <a
+                  v-if="property.mode == 'shortlet'"
                   target="_blank"
                   :href="property.link"
                   class="btn btn-primary btn-round d-none d-lg-block d-xl-block"
                 >
                   Check Availability
-                  <i class="material-icons">arrow_forward_ios</i></a
-                >
+                </a>
               </div>
             </div>
           </div>
@@ -152,6 +157,8 @@ export default {
       has_filters: 0,
       full_width: false,
       loading: false,
+      search: false,
+      propes: [],
     };
   },
   computed: {

@@ -13,24 +13,27 @@
     </button>
     </div>
     <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-            <li class=" nav-item">
-            <a href="javascript:;" class="nav-link">
-            <i class="material-icons">gite</i>
-
-            Become a host
-            </a>
+       <ul class="navbar-nav navbar-center ml-auto">
+           @foreach( $global_categories   as  $category)
+            <li class="nav-item">
+                <a href="/properties/{{ $category->slug }}" class="nav-link">
+                {{ $category->name }}
+                </a>
             </li>
+            @endforeach
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            
             <li class="nav-item">
             <a href="javascript:;" class="nav-link">
-                <i class="material-icons">attach_money</i>
+                <i class="material-icons"></i>
             </a>
             </li>
             @guest
 
             <li class="nav-item">
             <a  data-toggle="modal" href="#" data-to="login"  data-target="#loadModal" class="nav-link auth-form">
-                <i class="material-icons">login</i>
+                <i class="fal fa-sign-in"></i>
                 Login
             </a>
             </li>

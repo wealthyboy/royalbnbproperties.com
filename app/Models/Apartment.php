@@ -90,6 +90,15 @@ class Apartment extends Model
     }
 
 
+    public function facilities(){
+        return $this->belongsToMany(Attribute::class)->where('type','facilities');
+    }
+
+    public function apartment_facilities(){
+        return $this->belongsToMany(Attribute::class)->where('type','apartment facilities');
+    }
+
+
     public function getRouteKeyName()
     {
 		return 'slug';
@@ -106,7 +115,7 @@ class Apartment extends Model
     }
 
     public function getImageMAttribute(){
-        $image = basename($this->images[0]->image);
+        $image = basename(optional(optional($this->images)->first())->image);
         return asset('images/'.$this->folder.'/'. 'm' .'/'.$image);
     }
     

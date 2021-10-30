@@ -101,7 +101,7 @@ Route::group(['middleware' => 'currencyByIp'], function(){
 
 
 Route::get('/mailable', function () {
-    $user_reservation = App\Models\UserReservation::find(2);
+    $user_reservation = App\Models\UserReservation::find(68);
     $settings =  App\Models\SystemSetting::first();
     return new App\Mail\ReservationReceipt($user_reservation, $settings);
 });
@@ -131,6 +131,8 @@ Route::post('check/apartment/availablility',     'Apartments\ApartmentsControlle
 
 Route::get('checkout/{room}', 'Checkout\CheckoutController@index');
 Route::get('book/{property}', 'Booking\BookingController@book');
+Route::post('book/delete/{id}', 'Booking\BookingController@destroy');
+
 Route::post('book/store',     'Booking\BookingController@store');
 
 Route::post('book/coupon',    'Booking\BookingController@coupon');
@@ -138,10 +140,19 @@ Route::post('book/coupon',    'Booking\BookingController@coupon');
 Route::post('/api/saved',   'Api\Favorites\FavoritesController@store');
 Route::resource('reservations',   'Reservation\ReservationController',['names' => 'reservations']);
 
-Route::get('get/location/{id}', 'Properties\PropertiesController@getLocation');
-Route::resource('properties',   'Properties\PropertiesController',['name' => 'properties']);
 
-Route::get('property/search',         'Apartments\ApartmentsController@search');
+Route::get('get/location/{id}', 'Properties\PropertiesController@getLocation');
+Route::get('property/search',         'Properties\PropertiesController@search');
+
+Route::get('properties/location/{location}', 'Properties\PropertiesController@location');
+Route::get('properties/{category}', 'Properties\PropertiesController@index');
+Route::get('auto-complete', 'Properties\PropertiesController@autoComplete');
+
+
+Route::get('property/{property}', 'Properties\PropertiesController@show');
+
+
+
 Route::get('listings', 'Listings\ListingsController@index');
 
 Route::post('webhook/payment',     'WebHook\WebHookController@payment');

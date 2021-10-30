@@ -27,6 +27,8 @@ class   NavComposer {
 		$footer_info = Information::where('blog',false)->parents()->get(); 
 		$global_promos = Promo::where('make_live',1)->get(); 
 		$system_settings = SystemSetting::first();
+		$global_categories = Category::parents('sort_order', 'asc')->get();
+		
 
 		$currencies = Currency::all();
 	    $view->with([
@@ -34,6 +36,7 @@ class   NavComposer {
 			'system_settings'=>$system_settings,
 			'global_promos'=>$global_promos,
 			'currencies' =>$currencies,
+			'global_categories' => $global_categories
 	    ]);
     
 

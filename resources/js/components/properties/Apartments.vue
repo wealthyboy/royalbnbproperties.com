@@ -7,7 +7,7 @@
     </div>
     <div class="col-md-7">
       <div class="card-title">
-        <a href="#">{{ room.name }} {{ propertyLoading }}</a>
+        <a @click.prevent="showRoom(room)" href="#">{{ room.name }}</a>
       </div>
       <div><i class="fas fa-info-circle mr-2"></i>Instant Confirmation</div>
       <div class="entire-apartment">
@@ -91,26 +91,119 @@
         <div v-if="room.property.is_refundable">Fully Refundable</div>
       </div>
     </div>
-    <div class="col-md-2 position-relative">
+    <div v-if="stays && stays[1] != null" class="col-md-2 position-relative">
       <div class="form-group ">
         <label for="qty">Qty</label>
-        <select
-          :name="'apartment_quantity[' + room.uuid + ']'"
-          class="form-control room-q"
-          @change="getApartmentQuantity($event, room)"
+        <template
+          v-if="room.reservation_qty && room.quantity == room.reservation_qty"
         >
-          <option value="">0</option>
-          <option
-            :key="a"
-            :data-sale="2"
-            :data-price="a * room.display_price"
-            :data-id="room.id"
-            v-for="a in parseInt(room.no_of_rooms)"
-            :value="a"
-            >{{ a }}</option
+          <div class="text-muted ">
+            This apartment is not available for your seclected date
+          </div>
+        </template>
+        <template v-else>
+          <select
+            :name="'apartment_quantity[' + room.uuid + ']'"
+            class="form-control room-q"
+            @change="getApartmentQuantity($event, room)"
           >
-        </select>
-        <small>Please select one or more option you want to book</small>
+            <option value="">0</option>
+            <option
+              :key="a"
+              :data-sale="2"
+              :data-price="a * room.display_price"
+              :data-id="room.id"
+              v-for="a in parseInt(room.quantity)"
+              :value="a"
+              >{{ a }}</option
+            >
+          </select>
+          <small v-if="qty" class="text-danger"
+            >Please select one or more option you want to book</small
+          >
+        </template>
+      </div>
+    </div>
+
+    <div
+      v-if="lunchModal"
+      class=" gallery-images"
+      style="
+        position: fixed; 
+        display: block;
+        width: 100%; 
+        height: 100vh; 
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2090; 
+        background-color: #fff;
+        cursor: pointer;"
+    >
+      <div class="container">
+        <div class="">
+          <div class="">
+            <div
+              @click="lunchModal = !lunchModal"
+              style="z-index: 1;"
+              class="close-icon fa-2x position-absolute mr-3 "
+            >
+              <i class="fal fa-times"></i>
+            </div>
+            <h3 class="ml-3">Apartment Information</h3>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-4">
+            <div class="card-title">
+              <a @click.prevent="showRoom(room)" href="#">{{ room.name }}</a>
+            </div>
+            <div class="d-flex  flex-column">
+              <div class="position-relative">
+                <span class="position-absolute svg-icon-section">
+                  <svg>
+                    <use xlink:href="#bedrooms-icon"></use>
+                  </svg>
+                </span>
+                <span class="svg-icon-text"
+                  >{{ room.no_of_rooms }} Bedrooms</span
+                >
+              </div>
+              <div class="position-relative">
+                <span class="position-absolute svg-icon-section">
+                  <svg>
+                    <use xlink:href="#bathroom-icon"></use>
+                  </svg>
+                </span>
+                <span class="svg-icon-text">{{ room.toilets }} bathrooms</span>
+              </div>
+              <div class="position-relative">
+                <span class="position-absolute svg-icon-section">
+                  <svg>
+                    <use xlink:href="#sleeps-icon"></use>
+                  </svg>
+                </span>
+                <span class="svg-icon-text">{{ room.guests }} Guests</span>
+              </div>
+            </div>
+            <div class="facilities">
+              <div class="card-title">
+                <a href="#">Amenities</a>
+              </div>
+              <div
+                :key="apartment_facility.id"
+                v-for="apartment_facility in room.apartment_facilities"
+              >
+                <h3>{{ apartment_facility.parent.name }}</h3>
+                <div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            ee
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -119,9 +212,10 @@
 export default {
   props: {
     property: Object,
-    properties_not_available: Array,
     room: Object,
     propertyLoading: Boolean,
+    stays: Array,
+    qty: Boolean,
   },
   data() {
     return {
@@ -133,8 +227,9 @@ export default {
       checkedAttr: [],
       guests: 0,
       sub_total: 0,
-      stays: null,
+      lunchModal: false,
       propertyQty: [],
+      apartment_facilities: [],
       form: {
         room_quantity: [],
         selectedRooms: [],
@@ -144,6 +239,9 @@ export default {
   methods: {
     sum(arr) {
       return arr.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+    },
+    showRoom(room) {
+      this.lunchModal = !this.lunchModal;
     },
     getApartmentQuantity(e, ap) {
       this.guests = ap.max_adults + ap.max_children;
@@ -173,6 +271,11 @@ export default {
         });
       }
 
+      let aps = this.aps;
+      let t = this.total;
+      console.log(total, this.total);
+
+      this.$emit("qtyChange", { total: t, aps: aps });
       // Turn on extra services
     },
   },

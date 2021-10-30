@@ -8,6 +8,10 @@
   display: flex;
   align-items: center;
 
+  .page-header-full {
+    height: 100vh;
+  }
+
   .page-header-image {
     position: absolute;
     background-size: cover;

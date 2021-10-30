@@ -5,7 +5,7 @@
    @include('_partials.header_styles')
 
    <body>
-      <div id="app"  class="app">
+      <div id="app"  class="appp">
          <nav class="navbar   navbar-expand-lg " id="sectionsNav">
             @include('_partials.header')
 
@@ -19,9 +19,11 @@
 
       @include('_partials.modal')
 
+      <script
+         src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP') }}&v=weekly&channel=2"  async ></script>
 
       <script src="/js/popper.min.js" type="text/javascript"></script>
-      <script src="/js/services_js.js"></script>
+      <script src="/js/services_js.js?version={{ str_random(6) }}"></script>
       @yield('page-scripts')    
       <script type="text/javascript">
         @yield('inline-scripts')
