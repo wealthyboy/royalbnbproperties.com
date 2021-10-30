@@ -105,6 +105,8 @@
                         </div>
                         <div class="col-md-5">
                            <div style="height: 200px;" id="map2"></div>
+                           @if (null !== $areas)
+
                            <h3>Explore the area</h3>
                            <div class="">
                               <ul class="list-unstyled ">
@@ -113,6 +115,7 @@
                                  @endforeach
                               </ul>
                            </div>
+                           @endif
                         </div>
                      </div>
                   </div>
@@ -135,14 +138,16 @@
                         </div>
                         <div class="col-md-7">
                            <div style="" id="map"></div>
-                           <div class="row">
+                              <div class="row">
                               <div class="col-md-6 mt-3">
+                                 @if (null !== $areas)
                                  <h3>What's near by</h3>
                                  <ul class="list-unstyled">
                                     @foreach($areas as $key => $area)
                                     <li  class="">{{ $area->name }}</li>
                                     @endforeach
                                  </ul>
+                                 @endif
                               </div>
                               
                            </div>
@@ -191,9 +196,6 @@
 
 
                      </div>
-
-
-
                     <div>
                     <i class="fal fa-phone"></i> Call us @ {{ $system_settings->store_phone }} for more info.
                     </div>
