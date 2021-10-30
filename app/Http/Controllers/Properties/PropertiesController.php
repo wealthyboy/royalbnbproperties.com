@@ -566,7 +566,7 @@ class PropertiesController extends Controller
             $date = $request->check_in_checkout;
             $days = 0;
 
-            return view('apartments.show',
+            return view('properties.show',
                     compact(
                         'apartments',
                         'property_type',
