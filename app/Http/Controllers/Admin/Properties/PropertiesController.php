@@ -152,9 +152,7 @@ class PropertiesController extends Controller
         $location_full_name = null;
         if (!empty($request->location_id)){
             $location_ids = array_reverse($request->location_id);
-
             $location_ids = Location::find($location_ids);
-            $property->locations()->sync($request->location_id);
             $location_full_name = implode(', ', array_reverse($location_ids->pluck('name')->toArray()));
         }
 
@@ -187,6 +185,9 @@ class PropertiesController extends Controller
         $property->slug                = str_slug($title);
         $property->token               =  $id ? $property->token : $token;
         $property->save();
+        if (!empty($request->location_id)){
+            $property->locations()->sync($request->location_id);
+        }
         
 
         $property->attributes()->sync($request->attribute_id);
