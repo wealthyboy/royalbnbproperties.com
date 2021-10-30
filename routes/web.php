@@ -145,12 +145,9 @@ Route::get('get/location/{id}', 'Properties\PropertiesController@getLocation');
 Route::get('property/search',         'Properties\PropertiesController@search');
 
 Route::get('properties/location/{location}', 'Properties\PropertiesController@location');
-Route::get('properties/{category}', 'Properties\PropertiesController@index');
 Route::get('auto-complete', 'Properties\PropertiesController@autoComplete');
-
-
 Route::get('property/{property}', 'Properties\PropertiesController@show');
-
+Route::get('properties/{category}', 'Properties\PropertiesController@index');
 
 
 Route::get('listings', 'Listings\ListingsController@index');
