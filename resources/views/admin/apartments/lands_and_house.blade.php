@@ -104,19 +104,15 @@
                </div>
             </div>
 
-
-
             <div class="row">
-                <div class="col-md-6">
-                    <div class="togglebutton">
+               <div class="col-md-6">
+                  <div class="togglebutton">
                     <label>
                        <input {{ isset($property) && $property->is_price_negotiable == 1 ? 'checked' : ''}}  name="is_price_negotiable"  value="1" type="checkbox" checked>
                        Price is negotiable
                     </label>
-                    </div>
-                </div>
-
-               
+                  </div>
+               </div>
             </div>
             
             
