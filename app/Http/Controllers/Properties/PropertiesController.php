@@ -49,7 +49,6 @@ class PropertiesController extends Controller
      */
     public function  index(Request $request,Category $category)  
     {   
-        dd(true);
         $page_title = $category->title;
         $meta_tag_keywords = $category->keywords;
         $page_meta_description = $category->meta_description;
