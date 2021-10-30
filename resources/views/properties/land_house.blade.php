@@ -105,7 +105,7 @@
                         </div>
                         <div class="col-md-5">
                            <div style="height: 200px;" id="map2"></div>
-                           @if (null !== $areas)
+                           @if ($areas->count())
 
                            <h3>Explore the area</h3>
                            <div class="">
@@ -140,7 +140,7 @@
                            <div style="" id="map"></div>
                               <div class="row">
                               <div class="col-md-6 mt-3">
-                                 @if (null !== $areas)
+                                 @if ($areas->count())
                                  <h3>What's near by</h3>
                                  <ul class="list-unstyled">
                                     @foreach($areas as $key => $area)
