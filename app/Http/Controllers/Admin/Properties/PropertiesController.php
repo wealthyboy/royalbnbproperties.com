@@ -151,8 +151,9 @@ class PropertiesController extends Controller
         $images = !empty($request->images) ? $request->images : [];
         $location_full_name = null;
         if (!empty($request->location_id)){
-            $location_ids = Location::find($location_ids);
             $location_ids = array_reverse($request->location_id);
+
+            $location_ids = Location::find($location_ids);
             $property->locations()->sync($request->location_id);
             $location_full_name = implode(', ', array_reverse($location_ids->pluck('name')->toArray()));
         }
