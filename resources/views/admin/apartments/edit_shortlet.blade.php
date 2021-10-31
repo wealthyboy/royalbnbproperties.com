@@ -23,6 +23,21 @@
                   <input  required="true" name="apartment_name" data-msg="" value="{{ isset($property) ? $property->name :  old('apartment_name') }}" class="form-control" type="text">
                </div>
             </div>
+
+            <div class="col-md-4">
+                    <div class="form-group">
+                        <select name="category_id[]" required="true" class="form-control">
+                        <option  value="" selected="">--Choose Category--</option>
+                           @foreach($categories as $category)
+                            <option  value="{{ $category->id }}"                       
+                                {{ isset($property) && $helper->check(optional($property)->categories , $category->id) ? 'selected' : '' }} 
+                                >
+                                {{ $category->name }} 
+                            </option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
             <div class="col-md-4">
                <div class="form-group">
                   <select name="attribute_id[]" required class="form-control">
