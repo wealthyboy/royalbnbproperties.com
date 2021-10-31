@@ -367,6 +367,7 @@ class PropertiesController extends Controller
             foreach ( $images  as $image) {
                 $imgs= new Image(['image' => $image]);
                 $attr->images()->save($imgs);
+                $property->images()->save($imgs);
             }
         }
     }

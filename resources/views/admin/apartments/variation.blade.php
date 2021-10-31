@@ -110,7 +110,7 @@
             
             <div class="col-sm-12">
                 <div id="j-drop"  class="j-drop">
-                <input accept="image/*"  required="true"  data-msg="Upload  at least 5 images"  onchange="getFile(this,'room_images[{{ $counter }}][]')" class="upload_input"  multiple="true"   type="file" id="upload_file_input" name="product_image"  />
+                <input accept="image/*"  required="true"  data-msg="Upload  at least 5 images"  onchange="getFile(this,'images[{{ $counter }}][]')" class="upload_input"  multiple="true"   type="file" id="upload_file_input" name="product_image"  />
                     <div   class=" upload-text  {{ $counter }}"> 
                         <a  class="" href="#">
                             <img class="" src="/backend/img/upload_icon.png">
