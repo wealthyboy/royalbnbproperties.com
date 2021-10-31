@@ -15,9 +15,11 @@
             </div>
          </div>
          <div class="clearfix"></div>
-         <div class="col-md-8  position-relative bg-white ">
+         <div class=" {{ $property->images->count() >= 4 ? 'col-md-8' : 'col-md-12' }} position-relative bg-white ">
             <a href="#" class="img card-img galleries" style="background-image: url('{{ $property->image }}')"></a>
          </div>
+         @if ($property->images->count() >= 4)
+
          <div class="col-md-4 ">
             <div class="row no-gutters">
                <div class="col-6 pl-1  pb-1 pr-1">
@@ -46,9 +48,7 @@
                </div>
             </div>
          </div>
-
-
-         
+         @endif
 
          <div class="col-12 d-block d-sm-none">
             <div class="sm-flexslider">
