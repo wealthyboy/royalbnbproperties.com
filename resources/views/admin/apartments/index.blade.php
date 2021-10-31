@@ -82,7 +82,7 @@
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Status</th>
-                                    <th>Rooms</th>
+                                    <th>category</th>
                                     <th class="disabled-sorting text-right">Actions</th>
                                 </tr>
                             </thead>
@@ -105,8 +105,7 @@
                                     <td><a target="_blank">{{ $property->name }} {{ optional($property->city)->name }} {{ optional($property->state)->name }}</a></td>
                                     <td>{{ $property->allow == 1 ? 'Live' : 'Offline' }}</td>
                                     <td>
-                                        <span class="amount">
-                                        </span> 
+                                        {{ optional(optional($property->categories)->first())->name }}
                                     </td>
                                     <td class="td-actions ">                     
                                         <a href="{{ route('admin.properties.edit',['property'=>$property->id,'mode' => $property->mode ] ) }}" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
