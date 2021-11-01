@@ -189,7 +189,7 @@
             </div>
             <div class="facilities">
               <div class="card-title">
-                <a href="#">Amenities</a>
+                <a href="#">Amenities </a>
               </div>
               <div
                 :key="apartment_facility.id"
@@ -201,7 +201,13 @@
             </div>
           </div>
           <div class="col-md-8">
-            ee
+            <div>
+              <carousel>
+                <div :key="image.id" v-for="image in room.images">
+                  <img :src="image.image" alt="" />
+                </div>
+              </carousel>
+            </div>
           </div>
         </div>
       </div>
@@ -209,6 +215,9 @@
   </div>
 </template>
 <script>
+import Carousel from "vue-owl-carousel";
+// optional style for arrows & dots
+
 export default {
   props: {
     property: Object,
@@ -228,13 +237,27 @@ export default {
       guests: 0,
       sub_total: 0,
       lunchModal: false,
+      showSlider: false,
       propertyQty: [],
       apartment_facilities: [],
+      settings: {
+        dots: true,
+        dotsClass: "slick-dots custom-dot-class",
+        edgeFriction: 0.35,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+
       form: {
         room_quantity: [],
         selectedRooms: [],
       },
     };
+  },
+  components: {
+    Carousel,
   },
   methods: {
     sum(arr) {
@@ -242,6 +265,7 @@ export default {
     },
     showRoom(room) {
       this.lunchModal = !this.lunchModal;
+      this.showSlider = true;
     },
     getApartmentQuantity(e, ap) {
       this.guests = ap.max_adults + ap.max_children;

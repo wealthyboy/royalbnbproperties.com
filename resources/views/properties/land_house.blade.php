@@ -9,6 +9,11 @@
                <div>{{ $property->name }}</div>
             </div>
          </div>
+
+         {{ 
+
+            $property_type->images
+         }}
          <div class="col-md-4 d-flex  align-items-end  justify-content-end">
             <div>
                <saved :property="{{$property}}" />

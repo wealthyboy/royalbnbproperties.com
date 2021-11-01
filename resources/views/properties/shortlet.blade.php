@@ -14,20 +14,19 @@
                <saved :property="{{$property}}" />
             </div>
          </div>
-         {{ $property->images->count() }}
          <div class="clearfix"></div>
-         <div class=" {{ $property->images->count() >= 4 ? 'col-md-8' : 'col-md-12' }} position-relative bg-white ">
+         <div class=" {{ $property_type->images->count() >= 4 ? 'col-md-8' : 'col-md-12' }} position-relative bg-white ">
             <a href="#" class="img card-img galleries" style="background-image: url('{{ $property->image }}')"></a>
          </div>
-         @if ($property->images->count() >= 4)
+         @if ($property_type->images->count() >= 4)
 
          <div class="col-md-4 ">
             <div class="row no-gutters">
                <div class="col-6 pl-1  pb-1 pr-1">
-                  <a  href="#" class="img  card-img-tn img-fluid galleries" style="background-image: url('{{ optional($property->images[0])->image }}')"></a>
+                  <a  href="#" class="img  card-img-tn img-fluid galleries" style="background-image: url('{{ optional($property_type->images[0])->image }}')"></a>
                </div>
                <div class="col-6 ">
-                  <a class="img  card-img-tn header-filter img-fluid galleries" style="background-image: url('{{ $property->images[1]->image }}')"></a>
+                  <a class="img  card-img-tn header-filter img-fluid galleries" style="background-image: url('{{ $property_type->images[1]->image }}')"></a>
                   <a href="#" class="card-img-overlay  d-flex flex-column align-items-center justify-content-center hover-image bg-dark-opacity-04">
                      <p class="fs-48 font-weight-600 text-white lh-1 mb-1">
                         <svg  id="" class="mt-2">
@@ -38,10 +37,10 @@
                   </a>
                </div>
                <div class="col-6 pl-1  pr-1">
-                  <a href="#" class="img  card-img-tn img-fluid galleries" style="background-image: url('{{ $property->images[2]->image }}')"></a>
+                  <a href="#" class="img  card-img-tn img-fluid galleries" style="background-image: url('{{ $property_type->images[2]->image }}')"></a>
                </div>
                <div class="col-6 pb-2 position-relative">
-                  <a class="img  card-img-tn header-filter img-fluid galleries" style="background-image: url('{{ $property->images[3]->image }}')"></a>
+                  <a class="img  card-img-tn header-filter img-fluid galleries" style="background-image: url('{{ $property_type->images[3]->image }}')"></a>
                   <a href="#" id="full-image" class="card-img-overlay  d-flex flex-column align-items-center justify-content-center hover-image bg-dark-opacity-04">
                      <p class="fs-48 font-weight-600 text-white lh-1 mb-1">+{{ $property->images->count() }}</p>
                      <p class="fs-16 font-weight-bold text-white lh-1625 text-uppercase">View Gallery</p>
