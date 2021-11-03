@@ -59,12 +59,12 @@ class PropertiesController extends Controller
             $builder->where('categories.slug',$category->slug);
         })
         ->filter($request,  $this->getFilters($attributes))
-        ->latest()->paginate(3);
+        ->latest()->paginate(10);
         $properties->appends(request()->all());
         $saved =  $this->saved();
+        $properties->load('categories');
 
 
-    
         if( $request->ajax() ) { 
             return PropertyLists::collection(
                 $properties
@@ -73,7 +73,8 @@ class PropertiesController extends Controller
         $next_page= [];
 
         $next_page[] = $properties->nextPageUrl();
-        $properties->load('categories');
+
+        $total = $properties->total();
 
 
         return  view('properties.index',compact(
@@ -84,7 +85,8 @@ class PropertiesController extends Controller
             'properties',
             'next_page',
             'category',
-            'locations'
+            'locations',
+            'total'
         )); 
     }
 
@@ -173,7 +175,6 @@ class PropertiesController extends Controller
                 ->latest()->paginate(10);
                 $properties->appends(request()->all());
 
-
         }  else {
             $cities     = Property::where('location_full_name','like','%' .$data['location']. '%')->get();
 
@@ -209,6 +210,7 @@ class PropertiesController extends Controller
                 ->groupBy('properties.id')
                 ->latest()->paginate(5);
                 $properties->appends(request()->all());
+
                 if( $request->ajax() ) { 
                     return  PropertyLists::collection(
                         $properties

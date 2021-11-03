@@ -1,58 +1,33 @@
 @extends('layouts.app')
 @section('content')
 <!-- Carousel Card -->
-<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-   <div class="carousel-inner">
-      <div class="carousel-item active">
-         <div class="page-header header-filter" style="background-image: url('https://avenuemontaigne.ng/uploads/CYTb8rEICf4n8z5kJLcPoBH9mxOkYZDIB9NqIzmI.jpg');">
+<div id="" class="" data-ride="">
+   <div class="">
+      <div class="">
+         <div class="page-header header-filter" style="background-image: url('http://bnb.test/images/apartments/lZofEOvnFQmS9jFQ7DyndIlindeFzSrCgonJbNnx.jpg');">
             <div class="container">
                <div class="row">
+                  <div class="col-md-9 ml-auto mr-auto">
+                     <h2 class="title text-uppercase"> Lands . Houses . Short-lets</h2>
+                     <div class="">
+                        <div class="rounded">
+                           <location  :reload="1" />
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
       </div>
-      <div class="carousel-item">
-         <div class="page-header header-filter" style="background-image: url('https://avenuemontaigne.ng/uploads/MfsU4nIKSo0WVog3rBC5tXwPCFtHHczs9l4roB00.jpg');">
-            <div class="container">
-               <div class="row">
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="carousel-item">
-         <div class="page-header header-filter" style="background-image: url('https://avenuemontaigne.ng/uploads/xeoziKXfykSDUyJVFXzTSkiZ0f5v5vGFnO2fzwP4.jpg');">
-            <div class="container">
-               <div class="row">
-               </div>
-            </div>
-         </div>
-      </div>
+      
    </div>
 </div>
-<!-- End Carousel Card -->
-<div class="search-box">
-   <div class="container">
-      <div class="row">
-         <div class="col-md-10 ml-auto mr-auto">
-            <div class="card card-raised card-form-horizontal">
-               <div class="col-md-8 text-left">
-                  <div class="card-title">Find deals on Apartment homes...</div>
-                  <div>From cosy country homes to funky city flats</div>
-               </div>
-               <div class="card-body ">
-                  <location  :reload="1" />
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
+
 <div class="container-fluid mt-3 position-relative">
-   
 @if($cities->count())
    <div class="row">
       <div class="col-md-12">
-         <h2>Explore what's nearby</h2>
+         <h3 class="bold">Explore what's nearby</h3>
          <p>Here's where to go if you're looking to plan a city break itinerary filled with memorable cultural experiences.</p>
       </div>
 
@@ -60,7 +35,7 @@
       <div class="col-sm-3 text-center">
          <a href="http://">
             <img src="{{ $city->image }}" alt="Thumbnail Image" class="img-raised  img-fluid">
-            <h4>{{ $city->name }}</h4>
+            <h4 class="text-black bold">{{ $city->name }}</h4>
          </a>
       </div>
       @endforeach
@@ -73,24 +48,28 @@
    
 
    @if($banners->count())
-   <div class="row">
-      <div class="col-md-12">
-         <h2>Browse by category</h2>
-         <p>Here's where to go if you're looking to plan a city break itinerary filled with memorable cultural experiences.</p>
+   <div class="row no-gutters animation-transition-general">
+      <div class="col-md-12 mb-4">
+         <h3 class="bold">Browse by category</h3>
       </div>
       @foreach( $banners as $banner )
-         <div class="{{ $banner->col }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} ">
-            <a href="">
-               <div class="card card-background header-filter" style="background-image: url('{{ $banner->image }}')">
-                  <div class="card-body">
-                     <h3 class="card-title">{{ $banner->title }}</h3>
-                     <a href="#" class="btn btn-danger btn-round">
-                        <i class=""></i> View More
-                     </a>
+         <a class="d-block" href="{{ $banner->link }}">
+         <div class="{{ $banner->col }}  {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} pl-1 pr-1 mb-2">
+               <div class=" card-background-image banner-filter" style="background-image: url('{{ $banner->image }}')">
+                  <div  class="card-body ">
+                     <div style="z-index: 2" class="content z-index-1 text-white position-absolute bottom-0">
+                        <h2 class="card-title text-white text-uppercase">{{ $banner->title }}</h2>
+                        <a href="{{ $banner->link }}" class="btn  bold btn-primary btn-round">
+                           <i class=""></i> View More
+                        </a>
+                     </div>
+                     
                   </div>
                </div>
-           </a>
+           
          </div>
+        </a>
+
       @endforeach
    </div>
    @endif

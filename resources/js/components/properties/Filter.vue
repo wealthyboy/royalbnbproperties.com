@@ -1,7 +1,7 @@
 <template>
   <form id="collections" action="">
     <div class="text-left pl-3">
-      <div class="text-capitalize pb-2 pt-3">Your Budget</div>
+      <div class="text-capitalize pb-2 pt-3 bold">Your Budget</div>
       <div class="mb-2">
         <div class="checkbox">
           <label id="box50" class="checkbox-label">
@@ -118,7 +118,7 @@
 
       <template v-if="attributes">
         <div v-for="(map, k) in attributes" :key="k">
-          <div class="text-capitalize pb-2">
+          <div class="text-capitalize pb-2 bold">
             {{ k }}
           </div>
 
@@ -144,7 +144,7 @@
       </template>
 
       <template v-if="locations.length">
-        <div class="text-capitalize pb-2">Locations</div>
+        <div class="text-capitalize pb-2 bold">Locations</div>
         <div v-for="location in locations" :key="location.id" class="mb-5">
           <div class="checkbox">
             <label id="box50" class="checkbox-label">
@@ -187,7 +187,6 @@ export default {
   },
   computed: {
     ...mapGetters({
-      properties: "properties",
       attributes: "attributes",
       propertyLoading: "propertyLoading",
       locationSearch: "locationSearch",
@@ -236,7 +235,6 @@ export default {
     },
     filterProperty(url) {
       let t = new Date().getTime();
-
       this.getProperties(url + "&timestamp=" + t);
     },
   },

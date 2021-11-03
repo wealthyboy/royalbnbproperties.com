@@ -2,6 +2,7 @@ body {
   background-color: #eee;
   color: $black-color;
   font-weight: 300;
+  font-size: 0.9rem;
 }
 
 legend {
@@ -22,10 +23,10 @@ legend {
 }
 
 a {
-  color: $link-color;
+  color: $black-color;
   &:hover,
   &:focus {
-    color: darken($link-color, 5%);
+    color: darken($black-color, 5%);
     text-decoration: none;
   }
 
@@ -61,7 +62,7 @@ label {
   @include shadow-16dp();
 }
 
-/*           Animations              */
+/*           Animations      */
 .animation-transition-general {
   @include transitions($general-transition-time, $transition-linear);
 }
@@ -172,7 +173,8 @@ label {
   }
 }
 
-.header-filter {
+.header-filter,
+.banner-filter {
   position: relative;
 
   &:before,
@@ -187,15 +189,25 @@ label {
     content: "";
   }
 
-  &::before {
-    background: rgba(0, 0, 0, 0.5);
-  }
-
   .container {
     z-index: 2;
     position: relative;
   }
 }
+
+.header-filter {
+  &:after {
+    background: rgba(215, 215, 0, 0.5);
+  }
+}
+
+.banner-filter {
+  &:after {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  z-index: 1;
+}
+
 .clear-filter::before {
   background: none;
 }
@@ -359,7 +371,7 @@ label {
   z-index: 2;
   width: 100%;
   height: calc(100vh - 70px);
-  margin-top: 70px;
+  margin-top: 0px;
 }
 
 .tim-typo {
@@ -451,6 +463,23 @@ label {
   width: 100%;
 }
 
+.search-form {
+  min-width: 91%;
+}
+
+.search-form .auto-complete {
+  min-width: 100%;
+  right: -1px;
+}
+
+.auto-complete {
+  background-color: #ffffff;
+  max-width: 97.3%;
+  margin-top: 4.1rem;
+  z-index: 1;
+  border: 2px solid $gold-100;
+}
+
 // PARALLAX
 
 .parallax {
@@ -481,6 +510,15 @@ label {
   .parallax .parallax-image img {
     height: 100%;
     width: auto;
+  }
+
+  .search-form .auto-complete {
+    min-width: 100%;
+    right: -1px;
+  }
+
+  .auto-complete {
+    max-width: 94.3%;
   }
 }
 

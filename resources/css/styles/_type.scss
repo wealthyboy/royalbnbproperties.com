@@ -21,8 +21,9 @@
 
 body {
   font-family: $font-family-sans-serif;
-  font-weight: 300;
+  font-weight: 350;
   line-height: 1.5em;
+  font-size: 1.063rem;
 }
 
 h1,
@@ -35,7 +36,7 @@ h6,
 .h2,
 .h3,
 .h4 {
-  font-family: "Heading2", "Times New Roman", serif;
+  font-family: "Heading3", "Times New Roman", serif;
   font-weight: 300;
   line-height: 1.5em;
 }
@@ -120,7 +121,7 @@ small,
 .footer-big h4,
 .media .media-heading {
   font-weight: $font-weight-extra-bold;
-  font-family: "Heading3", "Times New Roman", serif;
+  font-family: "Heading1", "Times New Roman", serif;
 
   &,
   a {
@@ -131,6 +132,12 @@ small,
 
 h2.title {
   margin-bottom: $headings-margin-bottom * 2;
+}
+
+.bold {
+  font-weight: $font-weight-extra-bold;
+  font-family: "Heading1", "Times New Roman", serif;
+  color: $black-color;
 }
 
 .description,
@@ -151,6 +158,15 @@ h2.title {
 .text-success {
   color: $success !important;
 }
+
+.text-gold {
+  color: $gold-100 !important;
+}
+
+.text-black {
+  color: $black !important;
+}
+
 .text-info {
   color: $info !important;
 }
@@ -159,6 +175,20 @@ h2.title {
 }
 .text-gray {
   color: $gray-color !important;
+}
+
+.text-white {
+  color: $white !important;
+}
+
+.text-size-1 {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.text-size-2 {
+  font-size: 0.75rem;
+  font-weight: 400;
 }
 
 .space {

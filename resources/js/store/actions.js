@@ -47,6 +47,7 @@ export const getProperties = ({ commit }, url) => {
     .get(url)
     .then((response) => {
       commit("setProperties", response.data.data);
+      commit("setMeta", response.data.meta);
       commit("setAttributes", response.data.attributes);
       commit("setLinks", response.data.links);
       commit("setNextPageUrl", response.data.links.next);

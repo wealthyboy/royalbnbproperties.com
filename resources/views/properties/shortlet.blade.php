@@ -82,7 +82,7 @@
             <div class=" {{ $property->type == 'single' ? 'col-md-7' : 'col-md-12' }} rounded  mt-1">
                <div id="Overview" class="name rounded bg-white">
                   <div class="card-body">
-                     <h2 class="card-title">{{ $property->name }}</h2>
+                     <h3 class="card-title">{{ $property->name }}</h3>
                      <div class="row">
                         @if($property->type == 'single')
                         <div class="col-12 entire-apartment">

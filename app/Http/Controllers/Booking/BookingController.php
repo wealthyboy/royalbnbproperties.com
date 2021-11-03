@@ -39,6 +39,9 @@ class BookingController extends Controller
 
 		$referer = request()->headers->get('referer');
 
+	    //dd(\Cookie::get('booking'));
+
+
         
 		$bookings = BookingDetail::all_items_in_cart($property->id);
 
@@ -47,6 +50,7 @@ class BookingController extends Controller
 		}
 		
 		$ids = $bookings->pluck('id')->toArray();
+		//dd($bookings);
 		$booking = $bookings[0];
 		$nights = [];
 		$phone_codes = Helper::phoneCodes();	
@@ -89,21 +93,20 @@ class BookingController extends Controller
 
 
 		$ap_ids = [];
-
 		$value = bcrypt('^%&#*$((j1a2c3o4b5@+-40');
 		session()->put('booking',$value);
 		$cookie = cookie('booking',session()->get('booking'), time() + 86400);
-		
+
         foreach ($apartment_quantity as $key => $apartments) {
 			foreach ($apartments as $apartment_id => $quantity) {
-				$booking = new BookingDetail;
-			   $ap = Apartment::find($apartment_id);
-			   $price = optional($ap)->converted_price;
-			   $sale_price = optional($ap)->discounted_price;
-			   $sp  = $sale_price ?? $price;
+				$booking    = new BookingDetail;
+			    $ap         = Apartment::find($apartment_id);
+			    $price      = optional($ap)->converted_price;
+			    $sale_price = optional($ap)->discounted_price;
+			    $sp         = $sale_price ?? $price;
 				if ( \Cookie::get('booking') !== null ) {
 					$token  = \Cookie::get('booking');
-					$result = $booking->updateOrCreate(
+					$booking = $booking->updateOrCreate(
 						['apartment_id' => $apartment_id,'token' => $token],
 						[
 							'apartment_id' => $apartment_id,
@@ -118,6 +121,9 @@ class BookingController extends Controller
 						]
 					);
 				}  else  {
+					$value = bcrypt('^%&#*$((j1a2c3o4b5@+-40');
+		            session()->put('booking',$value);
+		            $cookie = cookie('booking',session()->get('booking'), time() + 86400);
 
 					$booking->apartment_id   = $ap->id;
 					$booking->quantity       = $quantity;
@@ -136,8 +142,8 @@ class BookingController extends Controller
 
 		}
 
-		//dd(\Cookie::get('booking'));
-
+       
+		$cookie = \Cookie::get('booking');
 		return response()->json([
 			'msg' => 'Reservation sucessfully added'
 		],200)->withCookie($cookie);

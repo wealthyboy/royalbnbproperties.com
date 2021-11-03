@@ -1,21 +1,27 @@
-@extends('layouts.listing')
+@extends('layouts.app')
 @section('content')
-<div class="d-flex  justify-content-center align-items-center" >
-   <div class="container">
-      <div class="row">
-         <div class="col-md-12 ml-auto mr-auto">
-            @if( isset($category) && strtolower($category->name)  == 'short-let')
-               <category-search  :reload="0" />
-            @else
-               <location  />
-            @endif
+
+<div  style="background-color: #f8f5f4;">
+   <div class="category-header header-filter" style="background-image: url('http://bnb.test/images/apartments/lZofEOvnFQmS9jFQ7DyndIlindeFzSrCgonJbNnx.jpg');">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-9 ml-auto mr-auto">
+                  <div class="position-absolute search-form">
+                     @if( isset($category) && strtolower($category->name)  == 'short-let')
+                        <category-search  :reload="0" />
+                     @else
+                        <location  />
+                     @endif                        
+                  </div>
+            </div>
          </div>
       </div>
    </div>
-</div>
-<div   class="container-fluid {{ $properties->count() < 1 ? 'full-bg' : '' }} position-relative">   
+      
+   
+<div   class="container-fluid {{ $properties->count() < 1 ? 'full-bg' : '' }} position-relative mt-3">   
 
-   <div class="sidebar-toggle d-block d-sm-none ">  <i class="material-icons filter adjust">sort</i> filter</div>
+   <div class="sidebar-toggle d-block d-sm-none ">  <i class="fas fa-sort-amount-up   filter adjust"></i> filter</div>
    <div class="sidebar-overlay d-none"></div>
    <div class="row no-gutters ">
       <div class="col-12">
@@ -37,14 +43,17 @@
                <filter-search :category="{{ isset($category) ? $category : '{}' }}" :locations="{{ $locations }}" :attrs="{{ $attributes }}" />
             </div>
          </div>
-         <div  id="load-products" class="col-md-9 pl-1 mb-5">
-            <products-index :next_page="{{ collect($next_page) }}" :propertys="{{ $properties->load('facilities','free_services') }}" />
+         <div  id="load-products" class="col-md-9 col-12 pl-1 mb-5">
+            <products-index :total="{{ collect(['total' => $total]) }}" :next_page="{{ collect($next_page) }}" :propertys="{{ $properties->load('facilities','free_services') }}" />
          </div>
       @endif
 
       
    </div>
 </div>
+
+</div>
+
    
 @endsection
 @section('page-scripts')

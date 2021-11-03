@@ -72,10 +72,6 @@ span.svg-icon-text {
   margin-left: 1.7rem;
 }
 
-.bold {
-  font-weight: 700;
-}
-
 .sidebar-toggle.sidebar-opened {
   left: 280px;
   z-index: 9000;
@@ -142,6 +138,15 @@ span.svg-icon-text {
 
 .card-img-overlay {
   z-index: 90;
+}
+
+.card-background-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 350px;
+  position: relative;
+  cursor: pointer;
+  color: $white;
 }
 
 /**
@@ -414,17 +419,13 @@ input {
 }
 
 .form-border {
-  border: 2px solid $brown-500;
+  border: 3px solid $gold-100;
   border-radius: 0.5rem;
   background-color: #fff;
 }
 
 .search .form-control {
   background-image: none !important;
-}
-
-.search.bmd-form-group {
-  padding-top: 18px !important;
 }
 
 .checkbox-label {
@@ -461,7 +462,7 @@ input {
 }
 
 .checkbox-label input:checked ~ .checkbox-custom {
-  background-color: $brown-500;
+  background-color: $gold-100;
   -webkit-transform: rotate(0deg) scale(1);
   -ms-transform: rotate(0deg) scale(1);
   transform: rotate(0deg) scale(1);

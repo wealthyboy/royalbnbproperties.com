@@ -5,16 +5,11 @@
    <div class="container">
       <div class="row no-gutters bg-white">
          <div class="col-lg-8">
-            <div class="bg-white">
+            <div class="bg-white p-3 bold">
                <div>{{ $property->name }}</div>
             </div>
          </div>
-
-         {{ 
-
-            $property_type->images
-         }}
-         <div class="col-md-4 d-flex  align-items-end  justify-content-end">
+         <div class="col-md-4 d-flex  align-items-center  justify-content-end">
             <div>
                <saved :property="{{$property}}" />
             </div>
@@ -53,46 +48,78 @@
             </div>
          </div>
          @endif
-
-
-         
-
          <div class="col-12 d-block d-sm-none">
             <div class="sm-flexslider">
-              <ul class="slides">
+                 
+               <ul class="slides">
                   @foreach($property->images  as $key => $image)
-                      <li data-thumb="{{ $image->image_m }}">
-                        <img src="{{ $image->image }}" />
-                      </li>
+                      
+                  <li data-thumb="{{ $image->image_m }}">
+                           <img src="{{ $image->image }}" />
+                         
+                  </li>
                   @endforeach
-              </ul>
+                    
+               </ul>
             </div>
          </div>
       </div>
       <div class="row">
          <div class="col-12 ">
             <nav class="nav text-capitalize bg-white">
-               <a class="nav-link text-capitalize active" href="#Overview">Overview</a>
-               <a class="nav-link text-capitalize pb-1" href="#Location">Location</a>
+               <a class="nav-link text-capitalize active text-gold text-size-1" href="#Overview">Overview</a>
+               <a class="nav-link text-capitalize pb-1 text-gold text-size-1" href="#Location">Location</a>
             </nav>
          </div>
       </div>
    </div>
    <div class="">
       <div class="container">
-      <div  class="row   align-items-start">
+         <div  class="row   align-items-start">
             <div class="col-md-8 rounded  mt-1">
                <div id="Overview" class="name rounded bg-white">
                   <div class="card-body">
-                     <h2 class="card-title">{{ $property->name }}</h2>
+                     <h3 class="card-title">{{ $property->name }}</h3>
+                     <div class="d-flex pb-3 border-bottom mb-3 justify-content-between">
+                       @if($property->discounted_price)
+                          
+                           <div>
+                              <del
+                                 >{{ $property->currency
+                              }}{{ number_format($property->converted_price) }}</del
+                                 >
+                           </div>
+                           <span
+                              >{{ $property->currency
+                           }}{{ number_format($property->discounted_price) }}</span
+                              ><span> per night</span>
+                           
+                           <div>{{ number_format($property->percentage_off) }}% off</div>
+                       @else
+                          <div class="bold">
+                              {{ $property->currency }}{{ number_format($property->converted_price)  }} 
+                              <div class="text-size-2">
+                                 {{ $property->price_mode }}
+                              </div>
+                           </div>
+
+                       @endif
+
+                       <div class="text-gold text-size-1">
+                        <i class="fal fa-phone"></i> Call us at {{ $system_settings->store_phone }} for more info.
+                     </div>
+
+                     </div>
+                     
+                     <p class="text-gold text-size-1">{{ $property->size }} sqm</p>
                      <div class="row">
                         @if($property->type == 'single')
                         <div class="col-12 entire-apartment">
                            @include('_partials.entire_apartments',['obj' => $property->single_room])
                         </div>
                         @endif
-                        <div class="col-md-7">
-                           <h3>Popular amenities</h3>
+                        <div class="col-md-6">
+                           <h5>Facilities</h5>
                            <div class="row">
                               @if($property->facilities->count())
                               @foreach($property->facilities->take(3) as $facility)
@@ -104,14 +131,11 @@
                               </div>
                               @endforeach
                               @endif
-                              
                            </div>
-                           
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                            <div style="height: 200px;" id="map2"></div>
                            @if ($areas->count())
-
                            <h3>Explore the area</h3>
                            <div class="">
                               <ul class="list-unstyled ">
@@ -126,6 +150,7 @@
                   </div>
                </div>
                
+               
                <div id="Location" class="name bg-white rounded">
                   <h3 class="card-title  pb-3 p-3 border-bottom">About this property</h3>
                   <div class="card-body">
@@ -136,14 +161,14 @@
                <div class="name bg-white rounded mb-5">
                   <h3 class="card-title  pb-3 p-3 border-bottom">About the area</h3>
                   <div class="card-body">
-                     <div  class="row   align-items-start">
-                        <div class="col-md-4">
+                     <div  class="">
+                        <div class="mb-3">
                            <h3> {{ $property->state }}</h3>
                            {{ $property->state_description }}
                         </div>
-                        <div class="col-md-7">
+                        <div class="">
                            <div style="" id="map"></div>
-                              <div class="row">
+                           <div class="row">
                               <div class="col-md-6 mt-3">
                                  @if ($areas->count())
                                  <h3>What's near by</h3>
@@ -154,67 +179,62 @@
                                  </ul>
                                  @endif
                               </div>
-                              
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-            <div class="col-12 pl-1 single-apartment rounded col-md-4 ">
-            <div
-                class="name  rounded mt-1 bg-white"
-            >
-                <div class="card-body">
-                <form id="single-form" action="" method="GET">
-                    <input
-                    type="hidden"
-                    id="qty"
-                    />
-                    <div class="d-flex pb-3 border-bottom mb-3 justify-content-between">
-
-                    @if($property->discounted_price)
-                    <div >
-                        <div>
-                        <div>
-                            <del
-                            >{{ $property->currency
-                            }}{{ number_format($property->converted_price) }}</del
-                            >
+            <div class="single-apartment rounded col-md-4">
+               <div
+                  class="name  rounded mt-1 bg-white"
+                  >
+                  <div class="card-body">
+                     <form id="single-form" action="" method="GET">
+                        <input
+                           type="hidden"
+                           id="qty"
+                           />
+                        <div class="d-flex pb-3 border-bottom mb-3 justify-content-between">
+                           @if($property->discounted_price)
+                           <div >
+                              <div>
+                                 <div>
+                                    <del
+                                       >{{ $property->currency
+                                    }}{{ number_format($property->converted_price) }}</del
+                                       >
+                                 </div>
+                                 <span
+                                    >{{ $property->currency
+                                 }}{{ number_format($property->discounted_price) }}</span
+                                    ><span> per night</span>
+                              </div>
+                              <div>{{ number_format($property->percentage_off) }}% off</div>
+                           </div>
+                           <div>
+                              @else
+                              <div class="bold">
+                                 {{ $property->currency }}{{ number_format($property->converted_price)  }} 
+                                 <div class="text-size-2">
+                                    {{ $property->price_mode }}
+                                 </div>
+                              </div>
+                              
+                           </div>
+                           
                         </div>
-                        <span
-                            >{{ $property->currency
-                            }}{{ number_format($property->discounted_price) }}</span
-                        ><span> per night</span>
-                        </div>
-                        <div>{{ number_format($property->percentage_off) }}% off</div>
-                        </div>
-                    <div>
-                    @else
-                    <div class="">
-                        {{ $property->currency }}{{ number_format($property->converted_price)  }} 
-
-                    <div>
-                        {{ $property->price_mode }}
-                    </div>
-                    </div>
-
-
-                     </div>
-                    <div>
-                    <i class="fal fa-phone"></i> Call us @ {{ $system_settings->store_phone }} for more info.
-                    </div>
-                    </div>
-
-                    @endif
-
-                    
-                </form>
-                </div>
-            </div>
+                        @endif
+                     </form>
+                     <div class="text-gold text-size-1">
+                                 <i class="fal fa-phone"></i> Call us @ {{ $system_settings->store_phone }} for more info.
+                              </div>
+                  </div>
+               </div>
             </div>
             
          </div>
+         
       </div>
    </div>
 </section>
@@ -234,10 +254,9 @@
       <div style="z-index: 1;" class="close-icon fa-2x position-absolute"><i class="fal fa-times"></i></div>
       <div id="gallery-images" class="carousel slide carousel-fade" data-ride="carousel">
          <ol class="carousel-indicators">
-           @foreach($property->images  as $key => $image)
+            @foreach($property->images  as $key => $image)
             <li data-target="#gallery-images" data-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : ''}}"></li>
             @endforeach
-
          </ol>
          <div class="carousel-inner">
             @foreach($property->images  as $key => $image)
@@ -250,17 +269,15 @@
                </div>
             </div>
             @endforeach
-
          </div>
          <a class="carousel-control-prev" href="#gallery-images" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="sr-only">Previous</span>
          </a>
          <a class="carousel-control-next" href="#gallery-images" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
          </a>
-
       </div>
    </div>
 </div>
@@ -271,18 +288,32 @@ $(".full-image").on('click',function(e){
 e.preventDefault()
 $("#content").addClass('d-')
 $('.gallery-images').removeClass('d-none')
-
 })
-
 $('.close-icon').on('click',function(){
-   $('.gallery-images').addClass('d-none')
+$('.gallery-images').addClass('d-none')
 })
+  $('.sm-flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails",
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:true,
+            loop:false
+        }
+    }
 
-  $('.sm-flexslider').flexslider({
-    animation: "slide",
-    controlNav: "thumbnails"
-  });
-
+  });
 })
 var geocoder;
 var map, big_map;
