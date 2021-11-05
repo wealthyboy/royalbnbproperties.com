@@ -4,7 +4,7 @@
 <div id="" class="" data-ride="">
    <div class="">
       <div class="">
-         <div class="page-header header-filter" style="background-image: url('http://bnb.test/images/apartments/lZofEOvnFQmS9jFQ7DyndIlindeFzSrCgonJbNnx.jpg');">
+         <div class="page-header header-filter" style="background-image: url('https://royalbnbproperties.com/uploads/R3DxvKHrMoDy8ib2uoeo4X3yWMzjejiMoIiUMPoz.jpg');">
             <div class="container">
                <div class="row">
                   <div class="col-md-9 ml-auto mr-auto">
