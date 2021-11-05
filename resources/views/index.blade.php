@@ -32,7 +32,7 @@
       </div>
 
       @foreach( $cities as $city )
-      <div class="col-sm-3 text-center">
+      <div class="col-sm-3 col-6 text-center">
          <a href="http://">
             <img src="{{ $city->image }}" alt="Thumbnail Image" class="img-raised  img-fluid">
             <h4 class="text-black bold">{{ $city->name }}</h4>
@@ -59,6 +59,7 @@
                   <div  class="card-body ">
                      <div style="z-index: 2" class="content z-index-1 text-white position-absolute bottom-0">
                         <h2 class="card-title text-white text-uppercase">{{ $banner->title }}</h2>
+                        <p>{{ $banner->title }}</p>
                         <a href="{{ $banner->link }}" class="btn  bold btn-primary btn-round">
                            <i class=""></i> View More
                         </a>
