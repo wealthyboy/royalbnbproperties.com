@@ -1,5 +1,6 @@
 @import "~flatpickr/dist/flatpickr.css";
 @import "~flexslider/flexslider.css";
+@import "owl.carousel/dist/assets/owl.carousel.css";
 
 @import "../../public/css/all.css";
 // @import "~bootstrap-icons/font/bootstrap-icons.css";
@@ -444,6 +445,43 @@ span.svg-icon-text {
 .carousel-fade .active.carousel-item-prev {
   transform: translateX(0);
   transform: translate3d(0, 0, 0);
+}
+
+.owl-nav {
+  font-size: 40px;
+}
+
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  color: #000 !important;
+  background-color: #ffffff !important;
+}
+
+button.owl-prev,
+button.owl-next {
+  box-shadow: 0px 2px 0.25rem 0px rgb(0 11 38 / 20%) !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  min-height: 2rem !important;
+  background-color: #fff !important;
+  color: $gold-100 !important;
+  border-radius: 50% !important;
+  position: absolute;
+  top: 29% !important;
+}
+
+button.owl-prev {
+  left: 3px !important;
+}
+
+button.owl-next {
+  right: 3px !important;
+}
+
+.owl-prev span,
+.owl-next span {
+  position: absolute;
+  top: 1.5px;
+  right: 8px;
 }
 
 // @media (max-width: 991px) {

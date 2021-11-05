@@ -23,9 +23,12 @@
             </h6>
             <div class="d-flex  justify-content-between">
               <div>
-                <a target="_blank" class="bold" :href="property.link">{{
-                  property.name
-                }}</a>
+                <a
+                  target="_blank"
+                  class="bold text-size-1-big"
+                  :href="property.link"
+                  >{{ property.name }}</a
+                >
                 <div class="d">
                   <small
                     ><a :href="property.link" class="p-0">{{ property.city }}</a

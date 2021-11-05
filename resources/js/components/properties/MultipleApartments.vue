@@ -74,13 +74,13 @@
                   {{ stays[0] || 0 }} {{ stays[1] || "night" }}
                 </p>
                 <p v-if="!stays">Choose dates</p>
-                <p class="font-weight-500 text-heading mb-0">
+                <p class="bold text-heading mb-0">
                   {{ property.currency }}{{ total | priceFormat }}
                 </p>
               </li>
               <li class="d-flex justify-content-between mb-2 lh-22">
                 <p class="text-gray-light mb-0">{{ aps }} Apartment(s)</p>
-                <p class="font-weight-500 text-heading mb-0">
+                <p class="bold text-heading mb-0">
                   {{ property.currency }}{{ apTotal | priceFormat }}
                 </p>
               </li>

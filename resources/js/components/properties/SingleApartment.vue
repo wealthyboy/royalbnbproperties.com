@@ -12,7 +12,7 @@
         />
         <div class="d-flex pb-3 border-bottom mb-3 justify-content-between">
           <template v-if="room.discounted_price">
-            <div>
+            <div class="d-none d-lg-block ">
               <div>
                 <del
                   >{{ room.currency
@@ -27,12 +27,15 @@
             <div>{{ room.percentage_off }}% off</div>
           </template>
           <template v-else>
-            <div class="bold">
+            <div class="bold price">
               {{ room.currency }}{{ room.converted_price | priceFormat }}
             </div>
           </template>
         </div>
-        <div v-if="room.property.is_refundable" class="mb-3  text-danger">
+        <div
+          v-if="room.property.is_refundable"
+          class="mb-3  text-size-1 text-danger"
+        >
           <i class="fas fa-info-circle text-danger mr-2"></i>Non - refundable
         </div>
 
@@ -69,14 +72,14 @@
                 {{ stays[0] || 0 }} {{ stays[1] || "night" }}
               </p>
               <p v-if="!stays">Choose dates</p>
-              <p class="font-weight-500 text-heading mb-0">
+              <p class=" bold text-heading mb-0">
                 {{ room.currency
                 }}{{ parseInt(stays[0] || 0) * room.display_price }}
               </p>
             </li>
             <li class="d-flex justify-content-between mb-2 lh-22">
               <p class="text-gray-light mb-0">Apartment(s)</p>
-              <p class="font-weight-500 text-heading mb-0">1</p>
+              <p class="bold text-heading mb-0">1</p>
             </li>
           </ul>
         </div>
@@ -84,7 +87,7 @@
           class="card-footer pt-4 bg-transparent d-flex justify-content-between p-0 align-items-center"
         >
           <p class="text-heading mb-0">Total Price:</p>
-          <span class="fs-32 font-weight-bold text-heading total-price"
+          <span class="fs-32 bold price  text-heading total-price"
             >{{ room.currency
             }}{{ room.display_price * parseInt(stays[0] || 0) }}</span
           >
@@ -94,7 +97,7 @@
           @click.prevent="checkAvailabity()"
           class=" btn btn-primary btn-round  mt-3  btn-block"
         >
-          <div v-if="propertyLoading" class="auth-spinner">
+          <div v-if="propertyLoading" class="auth-spinner ">
             <div class="lds-ellipsis">
               <div style="background: rgb(255, 255, 255);"></div>
               <div style="background: rgb(255, 255, 255);"></div>
@@ -102,7 +105,9 @@
               <div style="background: rgb(255, 255, 255);"></div>
             </div>
           </div>
-          <span v-if="!propertyLoading" class="lt">{{ text }}</span>
+          <span v-if="!propertyLoading" class="lt bold text-white">{{
+            text
+          }}</span>
         </button>
       </form>
     </div>

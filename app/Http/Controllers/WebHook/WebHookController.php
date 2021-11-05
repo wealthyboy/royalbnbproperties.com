@@ -45,13 +45,21 @@ class WebHookController extends Controller
 
         \Log::info($request->all());
 
-        $user_reservation = new UserReservation;
-        $guest = new GuestUser;
-        $guest->name      =  $request->booking['first_name'];
-        $guest->last_name        =  $request->booking['last_name'];
-        $guest->email   =  $request->booking['email'];
-        $guest->phone_number    = $request->booking['phone_number'];
-        $guest->save();
+        try {
+                $input    =  $request->data['metadata']['custom_fields'][0];
+
+                $user_reservation = new UserReservation;
+                $guest = new GuestUser;
+                $guest->name      =  $input['booking']['first_name'];
+                $guest->last_name        =  $input['booking']['last_name'];
+                $guest->email   =  $input['booking']['email'];
+                $guest->phone_number    = $input['booking']['phone_number'];
+                $guest->save();
+
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
 
         $bookings = BookingDetail::find($request->booking['booking_ids']);
 

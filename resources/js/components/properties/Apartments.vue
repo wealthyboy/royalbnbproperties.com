@@ -76,15 +76,15 @@
           <div class="d-inline-flex ">
             <template v-if="room.discounted_price">
               <div class="sale-price mr-3">
-                {{ room.currency }}{{ room.converted_price }}
+                {{ room.currency }}{{ room.converted_price | priceFormat }}
               </div>
-              <div class="price">
-                {{ room.currency }}{{ room.discounted_price }}
+              <div class="price bold">
+                {{ room.currency }}{{ room.discounted_price | priceFormat }}
               </div>
             </template>
             <template v-else>
-              <div class="price bold">
-                {{ room.currency }}{{ room.converted_price }}
+              <div class="price bold mt-2">
+                {{ room.currency }}{{ room.converted_price | priceFormat }}
               </div>
             </template>
           </div>

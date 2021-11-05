@@ -36,7 +36,7 @@
          <div class="auth-spinner d-none">
             @include('_partials.spinner',['bgcolor' => '#ffffff'])
          </div> 
-        <span class="lt bold text-white">Login</span> 
+        <span class="lt bold text-white bold">Login</span> 
       </button>
    </p>
    <div class="mt-4 pt-4 text-center border-top">

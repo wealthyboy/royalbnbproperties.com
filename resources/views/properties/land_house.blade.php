@@ -2,24 +2,24 @@
 @section('content')
 <div class="clearfix"></div>
 <section  id="content"  style="background-color: #f8f5f4;">
-   <div class="container">
-      <div class="row no-gutters bg-white">
-         <div class="col-lg-8">
-            <div class="bg-white p-3 bold">
+   <div class="container ">
+      <div class="row  no-gutters bg-white">
+         <div class="col-lg-8 col-8">
+            <div class="bg-white p-3 bold text-size-1-big">
                <div>{{ $property->name }}</div>
             </div>
          </div>
-         <div class="col-md-4 d-flex  align-items-center  justify-content-end">
+         <div class="col-md-4 col-4 d-flex   align-items-center  justify-content-end">
             <div>
                <saved :property="{{$property}}" />
             </div>
          </div>
          <div class="clearfix"></div>
-         <div class="{{ $property->images->count() >= 4 ? 'col-md-8' : 'col-md-12' }}  position-relative bg-white ">
+         <div class="{{ $property->images->count() >= 4 ? 'col-md-8' : 'col-md-12' }}  position-relative bg-white d-none d-lg-block  ">
             <a href="#" class=" img card-img galleries " style="background-image: url('{{ $property->image }}')"></a>
          </div>
          @if ($property->images->count() >= 4)
-         <div class="col-md-4 ">
+         <div class="col-md-4 d-none d-lg-block ">
             <div class="row no-gutters">
                <div class="col-6 pl-1  pb-1 pr-1">
                   <a  href="#" class="img  card-img-tn img-fluid galleries" style="background-image: url('{{ optional($property->images[0])->image }}')"></a>
@@ -48,22 +48,13 @@
             </div>
          </div>
          @endif
-         <div class="col-12 d-block d-sm-none">
-            <div class="sm-flexslider">
-               <ul class="slides">
-                  @foreach($property->images  as $key => $image)
-                     <li data-thumb="{{ $image->image_m }}">
-                        <img src="{{ $image->image }}" /> 
-                     </li>
-                  @endforeach
-               </ul>
-            </div>
-         </div>
+         @include('properties.mobile_slides')
+
       </div>
       <div class="row">
          <div class="col-12 ">
             <nav class="nav text-capitalize bg-white">
-               <a class="nav-link text-capitalize active text-gold text-size-1" href="#Overview">Overview</a>
+               <a class="nav-link text-capitalize active text-gold text-size-1 pb-3" href="#Overview">Overview</a>
                <a class="nav-link text-capitalize pb-1 text-gold text-size-1" href="#Location">Location</a>
             </nav>
          </div>
@@ -81,7 +72,7 @@
                      <div class="d-flex pb-3 border-bottom mb-3 justify-content-between">
                        @if($property->discounted_price)
                           
-                           <div>
+                           <div class="price">
                               <del
                                  >{{ $property->currency
                               }}{{ number_format($property->converted_price) }}</del
@@ -94,7 +85,7 @@
                            
                            <div>{{ number_format($property->percentage_off) }}% off</div>
                        @else
-                          <div class="bold">
+                          <div class="bold price">
                               {{ $property->currency }}{{ number_format($property->converted_price)  }} 
                               <div class="text-size-2">
                                  {{ $property->price_mode }}
@@ -122,14 +113,14 @@
                            <h5>Facilities</h5>
                            <div class="row">
                               @if($property->facilities->count())
-                              @foreach($property->facilities->take(3) as $facility)
-                              <div class="col-6 d-flex mb-2 align-items-center">
-                                 <span class="position-absolute svg-icon-section">
-                                 <?php echo  html_entity_decode($facility->svg) ?>
-                                 </span>
-                                 <span class="svg-icon-text">{{ $facility->name }}</span>
-                              </div>
-                              @endforeach
+                                 @foreach($property->facilities->take(3) as $facility)
+                                    <div class="col-6 d-flex mb-2 align-items-center">
+                                       <span class="position-absolute svg-icon-section">
+                                       <?php echo  html_entity_decode($facility->svg) ?>
+                                       </span>
+                                       <span class="svg-icon-text">{{ $facility->name }}</span>
+                                    </div>
+                                 @endforeach
                               @endif
                            </div>
                         </div>
@@ -214,7 +205,7 @@
                            </div>
                            <div>
                               @else
-                              <div class="bold">
+                              <div class="bold price">
                                  {{ $property->currency }}{{ number_format($property->converted_price)  }} 
                                  <div class="text-size-2">
                                     {{ $property->price_mode }}
@@ -244,36 +235,33 @@
 @endsection
 @section('inline-scripts')
 jQuery(function() {
-$(".full-image").on('click',function(e){
-   e.preventDefault()
-   $('.gallery-images').removeClass('d-none')
-   console.log(true)
-})
-$('.close-icon').on('click',function(){
-$('.gallery-images').addClass('d-none')
-})
-  $('.sm-flexslider').flexslider({
-    animation: "slide",
-    controlNav: "thumbnails",
-    margin:10,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        600:{
-            items:3,
-            nav:false
-        },
-        1000:{
-            items:5,
-            nav:true,
-            loop:false
-        }
-    }
+   $(".full-image").on('click',function(e){
+      e.preventDefault()
+      $('.gallery-images').removeClass('d-none')
+      console.log(true)
+      })
+      $('.close-icon').on('click',function(){
+      $('.gallery-images').addClass('d-none')
+   })
 
-  });
+   $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true,
+
+      responsive:{
+         0:{
+               items:1
+         },
+         600:{
+               items:1
+         },
+         1000:{
+               items:1
+         }
+      }
+   })
+
 })
 var geocoder;
 var map, big_map;

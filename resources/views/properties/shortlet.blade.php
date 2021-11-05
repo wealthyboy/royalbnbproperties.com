@@ -53,22 +53,12 @@
          </div>
          @endif
 
-         <div class="col-12 d-block d-sm-none">
-            <div class="sm-flexslider">
-              <ul class="slides">
-                  @foreach($property->images  as $key => $image)
-                      <li data-thumb="{{ $image->image_m }}">
-                        <img src="{{ $image->image }}" />
-                      </li>
-                  @endforeach
-              </ul>
-            </div>
-         </div>
+         @include('properties.mobile_slides')
       </div>
       <div class="row">
          <div class="col-12 ">
             <nav class="nav text-capitalize bg-white">
-               <a class="nav-link text-capitalize active  text-gold text-size-1" href="#Overview">Overview</a>
+               <a class="nav-link text-capitalize active  text-gold text-size-1 pb-3" href="#Overview">Overview</a>
                <a class="nav-link text-capitalize  text-gold text-size-1" href="#Amenities">Amenities</a>
                <a class="nav-link text-capitalize pb-1  text-gold text-size-1" href="#Location">Location</a>
                <a class="nav-link text-capitalize pb-1  text-gold text-size-1" href="#Reviews">Reviews  </a>

@@ -6,6 +6,7 @@ import Vue from "vue";
 import flatpickr from "flatpickr";
 import validate from "jquery-validation";
 window.flexslider = require("flexslider");
+require("owl.carousel");
 
 import store from "./store";
 

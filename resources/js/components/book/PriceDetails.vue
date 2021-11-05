@@ -79,14 +79,14 @@
       <div
         class="card-footer p-3  bg-transparent d-flex justify-content-between p-0 align-items-center"
       >
-        <p class="text-heading mb-0">
+        <p class="text-heading bold mb-0">
           Total Price:
         </p>
         <span
           :data-total="
             bookingTotal + bookingPropertyServicesTotal + bookingServicesTotal
           "
-          class=" bold text-heading total-price"
+          class=" bold text-heading total-price price"
           >{{ property.currency
           }}{{
             (bookingTotal +
