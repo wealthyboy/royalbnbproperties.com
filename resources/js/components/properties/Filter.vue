@@ -145,7 +145,7 @@
 
       <template v-if="locations.length">
         <div class="text-capitalize pb-2 bold">Locations</div>
-        <div v-for="location in locations" :key="location.id" class="mb-5">
+        <div v-for="location in locations" :key="location.id" class="mb-2">
           <div class="checkbox">
             <label id="box50" class="checkbox-label">
               <input
