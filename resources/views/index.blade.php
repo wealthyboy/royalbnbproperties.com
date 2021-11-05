@@ -59,7 +59,7 @@
                   <div  class="card-body ">
                      <div style="z-index: 2" class="content z-index-1 text-white position-absolute bottom-0">
                         <h2 class="card-title text-white text-uppercase">{{ $banner->title }}</h2>
-                        <p>{{ $banner->title }}</p>
+                        <p class="text-white">{{ $banner->title }}</p>
                         <a href="{{ $banner->link }}" class="btn  bold btn-primary btn-round">
                            <i class=""></i> View More
                         </a>
