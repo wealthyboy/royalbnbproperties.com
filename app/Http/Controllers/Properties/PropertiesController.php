@@ -119,6 +119,8 @@ class PropertiesController extends Controller
         ->filter($request,  $this->getFilters($attributes))
         ->latest()->paginate(3);
         $properties->appends(request()->all());
+        $total = $properties->total();
+
 
     
         if( $request->ajax() ) { 
@@ -141,7 +143,8 @@ class PropertiesController extends Controller
             'saved',
             'properties',
             'next_page',
-            'locations'
+            'locations',
+            'total'
 
         )); 
     }

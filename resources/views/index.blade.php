@@ -33,8 +33,8 @@
 
       @foreach( $cities as $city )
       <div class="col-sm-3 col-6 text-center">
-         <a href="http://">
-            <img src="{{ $city->image }}" alt="Thumbnail Image" class="img-raised  img-fluid">
+         <a href="/properties/location/{{ $city->slug }}">
+            <img src="{{ $city->image }}" alt="Properties in {{ $city->name }}" class="img-raised  img-fluid">
             <h4 class="text-black bold">{{ $city->name }}</h4>
          </a>
       </div>
