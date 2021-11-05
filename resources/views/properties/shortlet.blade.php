@@ -8,11 +8,11 @@
    <div class="container">
       <div class="row no-gutters bg-white">
          <div class="col-lg-8">
-            <div class="bg-white">
+            <div class="bg-white p-3 bold">
                <div>{{ $property->name }}</div>
             </div>
          </div>
-         <div class="col-md-4 d-flex  align-items-end  justify-content-end">
+         <div class="col-md-4 d-flex  align-items-center  justify-content-end">
             <div>
                <saved :property="{{$property}}" />
             </div>
@@ -36,7 +36,7 @@
                            <use xlink:href="#virtual-tour"></use>
                         </svg>
                      </p>
-                     <p class="fs-16 font-weight-bold text-white lh-1625 text-uppercase">Virtual Tour</p>
+                     <p class="fs-16 font-weight-bold text-white lh-1625 text-uppercase bold">Virtual Tour</p>
                   </a>
                </div>
                <div class="col-6 pl-1  pr-1">
@@ -45,8 +45,8 @@
                <div class="col-6 pb-2 position-relative">
                   <a class="img  card-img-tn header-filter img-fluid galleries" style="background-image: url('{{ $property_type->images[3]->image }}')"></a>
                   <a href="#" id="full-image" class="card-img-overlay  d-flex flex-column align-items-center justify-content-center hover-image bg-dark-opacity-04">
-                     <p class="fs-48 font-weight-600 text-white lh-1 mb-1">+{{ $property->images->count() }}</p>
-                     <p class="fs-16 font-weight-bold text-white lh-1625 text-uppercase">View Gallery</p>
+                     <p class="fs-48 font-weight-600 text-white lh-1 mb-1 bold">+{{ $property->images->count() }}</p>
+                     <p class="fs-16 font-weight-bold text-white lh-1625 text-uppercase bold">View Gallery</p>
                   </a>
                </div>
             </div>
@@ -68,10 +68,10 @@
       <div class="row">
          <div class="col-12 ">
             <nav class="nav text-capitalize bg-white">
-               <a class="nav-link text-capitalize active" href="#Overview">Overview</a>
-               <a class="nav-link text-capitalize" href="#Amenities">Amenities</a>
-               <a class="nav-link text-capitalize pb-1" href="#Location">Location</a>
-               <a class="nav-link text-capitalize pb-1" href="#Reviews">Reviews  </a>
+               <a class="nav-link text-capitalize active  text-gold text-size-1" href="#Overview">Overview</a>
+               <a class="nav-link text-capitalize  text-gold text-size-1" href="#Amenities">Amenities</a>
+               <a class="nav-link text-capitalize pb-1  text-gold text-size-1" href="#Location">Location</a>
+               <a class="nav-link text-capitalize pb-1  text-gold text-size-1" href="#Reviews">Reviews  </a>
             </nav>
          </div>
       </div>
@@ -85,12 +85,12 @@
                      <h3 class="card-title">{{ $property->name }}</h3>
                      <div class="row">
                         @if($property->type == 'single')
-                        <div class="col-12 entire-apartment">
+                        <div class="col-12 entire-apartment mb-3">
                            @include('_partials.entire_apartments',['obj' => $property->single_room])
                         </div>
                         @endif
-                        <div class="col-md-7">
-                           <h3>Popular amenities</h3>
+                        <div class="col-md-6">
+                           <h5 class="bold">Popular amenities</h5>
                            <div class="row">
                               @if($property->facilities->count())
                               @foreach($property->facilities->take(3) as $facility)
@@ -103,10 +103,10 @@
                               @endforeach
                               @endif
                               <div class="see-more col-12">
-                                 <a href="#">See all >></a>
+                                 <a class="text-size-2 text-gold" href="#">See all >></a>
                               </div>
                            </div>
-                           <h3>Cleaning and safety practices</h3>
+                           <h5 class="bold">Safety practices</h5>
                            <div class="">
                               <ul class="list-unstyled ">
                                  @foreach($safety_practices as $key => $safety_practice)
@@ -115,9 +115,10 @@
                               </ul>
                            </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                            <div style="height: 200px;" id="map2"></div>
-                           <h3>Explore the area</h3>
+                           @if ($areas->count())
+                           <h5 class="bold">Explore the area</h5>
                            <div class="">
                               <ul class="list-unstyled ">
                                  @foreach($areas as $key => $area)
@@ -125,6 +126,7 @@
                                  @endforeach
                               </ul>
                            </div>
+                           @endif
                         </div>
                      </div>
                   </div>
@@ -152,16 +154,19 @@
                         <div class="col-md-7">
                            <div style="" id="map"></div>
                            <div class="row">
+                             @if ($areas->count())
+
                               <div class="col-md-6">
-                                 <h3>What's near by</h3>
+                                 <h5>What's near by</h5>
                                  <ul class="list-unstyled">
                                     @foreach($areas as $key => $area)
                                     <li  class="">{{ $area->name }}</li>
                                     @endforeach
                                  </ul>
                               </div>
+                              @endif
                               <div class="col-md-6">
-                                 <h3>Restuarants</h3>
+                                 <h5>Restuarants</h5>
                                  <ul class="list-unstyled ">
                                     @foreach($restaurants as $key => $restaurant)
                                     <li  class=""><span class="position-absolute svg-icon-section">
@@ -189,7 +194,7 @@
                      <div class="row">
                         @foreach($amenities as $key => $apartment_facilities)
                         <div class="col-md-3">
-                           <h3>{{ $key }}</h3>
+                           <h5>{{ $key }}</h5>
                            <ul class="list-unstyled">
                               @foreach($apartment_facilities as $key => $apartment_facility)
                               <li>
@@ -203,7 +208,7 @@
                   </div>
                </div>
 
-               <div class="name house-rules mt-1 bg-white">
+               <div class="name house-rules mt-1 bg-white mb-3">
                   <h3 class="card-title  p-3 border-bottom">House Rules</h3>
                   <div class="card-body">
                      <ul class="list-unstyled">
@@ -230,50 +235,8 @@
       </div>
    </div>
 </section>
-<div class="d-none gallery-images" style="
-   position: fixed; 
-   display: block;
-   width: 100%; 
-   height: 100vh; 
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   z-index: 2090; 
-   background-color: rgba(0,0,0,.5);
-   cursor: pointer;" >
-   <div style="" class="">
-      <div style="z-index: 1;" class="close-icon fa-2x position-absolute"><i class="fal fa-times"></i></div>
-      <div id="gallery-images" class="carousel slide carousel-fade" data-ride="carousel">
-         <ol class="carousel-indicators">
-           @foreach($property->images  as $key => $image)
-            <li data-target="#gallery-images" data-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : ''}}"></li>
-            @endforeach
 
-         </ol>
-         <div class="carousel-inner">
-            @foreach($property->images  as $key => $image)
-            <div class="carousel-item {{ $key == 0 ? 'active' : ''}}">
-               <div  class="full-background" style="background-image: url('{{ $image->image }}');">
-                  <div class="container">
-                     <div class="row">
-                     </div>
-                  </div>
-               </div>
-            </div>
-            @endforeach
+@include('properties.slider')
 
-         </div>
-         <a class="carousel-control-prev" href="#gallery-images" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-         </a>
-         <a class="carousel-control-next" href="#gallery-images" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-         </a>
 
-      </div>
-   </div>
-</div>
 @endsection

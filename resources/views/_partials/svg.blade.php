@@ -46,6 +46,13 @@
       <path fill-rule="evenodd" d="M9.35 3.9C6.9 3.9 5 5.9 5 8.36V22H3V8.36A6.36 6.36 0 019.35 2c3.5 0 6.15 2.85 6.15 6.36V9.8h2c1.13 0 2.14.66 2.6 1.69l.9 1.99H8.1l.9-2a2.85 2.85 0 012.6-1.68h2V8.36c0-2.46-1.79-4.46-4.25-4.46z" clip-rule="evenodd"></path><path d="M12.5 16.5a1 1 0 11-2 0 1 1 0 012 0zm6 0a1 1 0 11-2 0 1 1 0 012 0zm-8.5 4a1 1 0 11-2 0 1 1 0 012 0zm5.5 0a1 1 0 11-2 0 1 1 0 012 0zm5.5 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
    </symbol>
 
+   <symbol
+      id="date-icon"
+      viewBox="0 0 24 24"
+   >
+     <path fill-rule="evenodd" d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-1.99 2L3 19a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 5v11H5V8h14zm-7 2H7v5h5v-5z" clip-rule="evenodd"></path>
+   </symbol>
+
    <symbol    
          id="sleeps-icon"
          viewBox="0 0 24 24"
@@ -53,6 +60,8 @@
       <path fill-rule="evenodd" d="M10.99 8A3 3 0 115 8a3 3 0 016 0zm8 0A3 3 0 1113 8a3 3 0 016 0zM8 13c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm7.03.05c.35-.03.68-.05.97-.05 2.33 0 7 1.17 7 3.5V19h-6v-2.5c0-1.48-.81-2.61-1.97-3.45z" clip-rule="evenodd"></path>   </symbol>
 </defs>
 </svg>
+
+
 
 
 

@@ -1,7 +1,7 @@
 @extends('layouts.listing')
 @section('content')
 <div class="clearfix"></div>
-<section  id="content" style="background-color: #f8f5f4;">
+<section  id="content"  style="background-color: #f8f5f4;">
    <div class="container">
       <div class="row no-gutters bg-white">
          <div class="col-lg-8">
@@ -50,16 +50,12 @@
          @endif
          <div class="col-12 d-block d-sm-none">
             <div class="sm-flexslider">
-                 
                <ul class="slides">
                   @foreach($property->images  as $key => $image)
-                      
-                  <li data-thumb="{{ $image->image_m }}">
-                           <img src="{{ $image->image }}" />
-                         
-                  </li>
+                     <li data-thumb="{{ $image->image_m }}">
+                        <img src="{{ $image->image }}" /> 
+                     </li>
                   @endforeach
-                    
                </ul>
             </div>
          </div>
@@ -80,6 +76,8 @@
                <div id="Overview" class="name rounded bg-white">
                   <div class="card-body">
                      <h3 class="card-title">{{ $property->name }}</h3>
+                     <p class="text-gold text-size-1">Size: {{ $property->size }} sqm</p>
+
                      <div class="d-flex pb-3 border-bottom mb-3 justify-content-between">
                        @if($property->discounted_price)
                           
@@ -105,13 +103,15 @@
 
                        @endif
 
-                       <div class="text-gold text-size-1">
-                        <i class="fal fa-phone"></i> Call us at {{ $system_settings->store_phone }} for more info.
-                     </div>
+                       
 
                      </div>
+
+                     <div class="text-gold text-size-2 ">
+                        <i class="fal fa-phone"></i> Call us at {{ $system_settings->store_phone }} for more info.
+                     </div>
                      
-                     <p class="text-gold text-size-1">{{ $property->size }} sqm</p>
+                     
                      <div class="row">
                         @if($property->type == 'single')
                         <div class="col-12 entire-apartment">
@@ -185,7 +185,7 @@
                   </div>
                </div>
             </div>
-            <div class="single-apartment rounded col-md-4">
+            <div class="single-apartment rounded col-md-4  d-none d-lg-block ">
                <div
                   class="name  rounded mt-1 bg-white"
                   >
@@ -222,13 +222,14 @@
                               </div>
                               
                            </div>
+                           <div class="text-gold text-size-1">
+                              <i class="fal fa-phone"></i> Call us at {{ $system_settings->store_phone }} for more info.
+                           </div>
                            
                         </div>
                         @endif
                      </form>
-                     <div class="text-gold text-size-1">
-                                 <i class="fal fa-phone"></i> Call us @ {{ $system_settings->store_phone }} for more info.
-                              </div>
+                     
                   </div>
                </div>
             </div>
@@ -238,49 +239,8 @@
       </div>
    </div>
 </section>
-<div class="d-none gallery-images" style="
-   position: fixed; 
-   display: block;
-   width: 100%; 
-   height: 100vh; 
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   z-index: 2090; 
-   background-color: rgba(0,0,0,.5);
-   cursor: pointer;" >
-   <div style="" class="">
-      <div style="z-index: 1;" class="close-icon fa-2x position-absolute"><i class="fal fa-times"></i></div>
-      <div id="gallery-images" class="carousel slide carousel-fade" data-ride="carousel">
-         <ol class="carousel-indicators">
-            @foreach($property->images  as $key => $image)
-            <li data-target="#gallery-images" data-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : ''}}"></li>
-            @endforeach
-         </ol>
-         <div class="carousel-inner">
-            @foreach($property->images  as $key => $image)
-            <div class="carousel-item {{ $key == 0 ? 'active' : ''}}">
-               <div  class="full-background" style="background-image: url('{{ $image->image }}');">
-                  <div class="container">
-                     <div class="row">
-                     </div>
-                  </div>
-               </div>
-            </div>
-            @endforeach
-         </div>
-         <a class="carousel-control-prev" href="#gallery-images" role="button" data-slide="prev">
-         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-         <span class="sr-only">Previous</span>
-         </a>
-         <a class="carousel-control-next" href="#gallery-images" role="button" data-slide="next">
-         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-         <span class="sr-only">Next</span>
-         </a>
-      </div>
-   </div>
-</div>
+
+
 @endsection
 @section('inline-scripts')
 jQuery(function() {

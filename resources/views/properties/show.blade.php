@@ -1,6 +1,6 @@
 @extends('layouts.listing')
 @section('content')
-<div class="clearfix"></div>
+<div class=""></div>
 @if($property->mode == 'shortlet')
   @include('properties.shortlet')
 @else
@@ -22,7 +22,7 @@
       cursor: pointer;" 
    >
    <div style="" class="">
-      <div style="z-index: 1;" class="close-icon fa-2x position-absolute"><i class="fal fa-times"></i></div>
+      <button style="z-index: 1; right: 3px;" class="close-icon cursor-pointer fa-2x position-absolute"><i class="fal fa-times"></i></button>
       <div id="gallery-images" class="carousel slide carousel-fade" data-ride="carousel">
          <ol class="carousel-indicators">
            @foreach($property->images  as $key => $image)

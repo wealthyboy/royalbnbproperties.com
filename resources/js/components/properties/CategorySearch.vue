@@ -10,24 +10,17 @@
         <date-range />
       </div>
 
-      <div id="people-number" class="col-md-5  cursor-pointer">
+      <div id="people-number" class="col-md-5  cursor-pointer p-0">
         <guests />
       </div>
-      <div class="col-md-2">
-        <template v-if="!reload">
-          <button
-            type="button"
-            @click.prevent="search()"
-            class="btn btn-primary btn-block"
-          >
-            <i class="material-icons">search</i>
-          </button>
-        </template>
-        <template v-if="reload">
-          <button type="submit" class="btn btn-primary btn-block">
-            <i class="fas fa-search"></i>
-          </button>
-        </template>
+      <div class="col-md-2  check-availablility">
+        <button
+          type="button"
+          @click.prevent="search()"
+          class="btn btn-primary btn-block m-auto  bold check-availablility-button"
+        >
+          <i class="fas fa-search"></i>
+        </button>
       </div>
     </div>
   </form>

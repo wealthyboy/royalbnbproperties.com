@@ -27,17 +27,18 @@
             <div>{{ room.percentage_off }}% off</div>
           </template>
           <template v-else>
-            <div class="">
+            <div class="bold">
               {{ room.currency }}{{ room.converted_price | priceFormat }}
             </div>
           </template>
         </div>
-        <div v-if="room.property.is_refundable" class="mb-4">
-          <i class="fas fa-info-circle mr-2"></i>Non - refundable
+        <div v-if="room.property.is_refundable" class="mb-3  text-danger">
+          <i class="fas fa-info-circle text-danger mr-2"></i>Non - refundable
         </div>
 
-        <div>
-          <i class="fas fa-info-circle mr-2 mb-3"></i>Instant Confirmation
+        <div class="text-gold text-size-2">
+          <i class="fas fa-info-circle mr-2 mb-3  text-gold "></i>Instant
+          Confirmation
         </div>
 
         <div class="form-row mt-2">
@@ -50,12 +51,11 @@
           </div>
 
           <div
-            class="form-group form-border search border rounded pl-2 col-md-12 bmd-form-group"
+            class="form-group ml-1 form-border cursor-pointer search col-md-12 bmd-form-group"
           >
-            <label for="flatpickr-input-f" class="pl-2 bmd-label-static"
+            <label class="pl-2 " for="flatpickr-input-f"
               >Check-in - Check-out</label
             >
-
             <date
               :isDateNeedsToToOpen="isDateNeedsToToOpen"
               @dateSelected="dateSelected"

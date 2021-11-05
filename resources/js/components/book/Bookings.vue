@@ -2,7 +2,7 @@
   <div class="bg-white mt-2">
     <div class="d-flex justify-content-between align-items-center">
       <div>
-        <h4 class="card-title p-3 ">
+        <h4 class="card-title p-3 mb-0">
           {{ booking.apartment.name || property.name }}
         </h4>
       </div>
@@ -19,10 +19,13 @@
       </div>
     </div>
 
-    <div class="card-body">
-      <div><i class="fas fa-info-circle mr-2"></i>Instant Confirmation</div>
+    <div class="card-body pt-0">
+      <div class="text-gold">
+        <i class="fas fa-info-circle mr-2 text-gold text-size-2"></i>Instant
+        Confirmation
+      </div>
       <div class="entire-apartment">
-        <div>Entire apartment</div>
+        <div class="mb-3">Entire apartment</div>
         <div class="d-flex justify-content-between flex-wrap">
           <div class="position-relative">
             <span class="position-absolute svg-icon-section">

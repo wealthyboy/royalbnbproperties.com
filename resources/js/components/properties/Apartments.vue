@@ -9,9 +9,11 @@
       <div class="card-title">
         <a @click.prevent="showRoom(room)" href="#">{{ room.name }}</a>
       </div>
-      <div><i class="fas fa-info-circle mr-2"></i>Instant Confirmation</div>
+      <div class="text-size-2 text-gold">
+        <i class="fas fa-info-circle mr-2 "></i>Instant Confirmation
+      </div>
       <div class="entire-apartment">
-        <div>Entire apartment</div>
+        <div class="bold mb-2">Entire apartment</div>
         <div class="d-flex justify-content-between flex-wrap">
           <div class="position-relative">
             <span class="position-absolute svg-icon-section">
@@ -50,8 +52,8 @@
           :key="free_service.id"
           class="position-relative"
         >
-          <span class="position-absolute svg-icon-section"></span>
-          <span class="svg-icon-text">{{ free_service.name }}</span>
+          <span class="position-absolute svg-icon-section "></span>
+          <span class="svg-icon-text text-gray">{{ free_service.name }}</span>
         </div>
       </div>
 
@@ -81,12 +83,12 @@
               </div>
             </template>
             <template v-else>
-              <div class="price">
+              <div class="price bold">
                 {{ room.currency }}{{ room.converted_price }}
               </div>
             </template>
           </div>
-          <div>per night</div>
+          <div class="text-size-2">per night</div>
         </div>
         <div v-if="room.property.is_refundable">Fully Refundable</div>
       </div>
@@ -144,13 +146,14 @@
       <div class="container">
         <div class="">
           <div class="">
-            <div
+            <button
               @click="lunchModal = !lunchModal"
-              style="z-index: 1;"
-              class="close-icon fa-2x position-absolute mr-3 "
+              style="z-index: 1; right:10px;"
+              class="close-icon  cursor-pointer fa-2x position-absolute"
             >
               <i class="fal fa-times"></i>
-            </div>
+            </button>
+
             <h3 class="ml-3">Apartment Information</h3>
           </div>
         </div>

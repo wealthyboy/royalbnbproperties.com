@@ -39,13 +39,15 @@
               {{ booking.quantity }} X
               {{ booking.apartment.name || property.name }}
             </div>
-            <span>
+            <span class="bold">
               <del>{{ booking.currency }}{{ booking.price | priceFormat }}</del>
-              {{ booking.currency
-              }}{{ booking.sale_price | priceFormat }} </span
-            ><span> per night</span>
+              {{ booking.currency }}{{ booking.sale_price | priceFormat }}
+            </span>
           </div>
-          <div>{{ property.currency }}{{ booking.total | priceFormat }}</div>
+          <span class="text-size-2"> per night</span>
+          <div class="bold">
+            {{ property.currency }}{{ booking.total | priceFormat }}
+          </div>
         </template>
         <template v-else>
           <div>
@@ -53,10 +55,14 @@
               {{ booking.quantity }} X
               {{ booking.apartment.name || property.name }}
             </div>
-            <span>{{ booking.currency }}{{ booking.price | priceFormat }}</span
-            ><span> per night</span>
+            <div class="bold">
+              {{ property.currency }}{{ booking.price | priceFormat }}
+              <div class="text-size-2">per night</div>
+            </div>
           </div>
-          <div>{{ property.currency }}{{ booking.total | priceFormat }}</div>
+          <div class="bold">
+            {{ property.currency }}{{ booking.total | priceFormat }}
+          </div>
         </template>
       </div>
       <div
@@ -65,7 +71,7 @@
         <p class="text-heading mb-0">
           Sub Total
         </p>
-        <span class="fs-32 font-weight-bold text-heading total-price"
+        <span class=" text-heading total-price bold"
           >{{ property.currency }}{{ parseInt(sub_total) | priceFormat }}</span
         >
       </div>
@@ -80,7 +86,7 @@
           :data-total="
             bookingTotal + bookingPropertyServicesTotal + bookingServicesTotal
           "
-          class="fs-32 font-weight-bold text-heading total-price"
+          class=" bold text-heading total-price"
           >{{ property.currency
           }}{{
             (bookingTotal +

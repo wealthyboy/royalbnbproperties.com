@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.listing')
 @section('content')
 
 <div  style="background-color: #f8f5f4;">
@@ -6,13 +6,13 @@
       <div class="container">
          <div class="row">
             <div class="col-md-9 ml-auto mr-auto">
-                  <div class="position-absolute search-form">
-                     @if( isset($category) && strtolower($category->name)  == 'short-let')
-                        <category-search  :reload="0" />
-                     @else
-                        <location  />
-                     @endif                        
-                  </div>
+               <div class="search-form">
+                  @if( isset($category) && strtolower($category->name)  == 'short-let')
+                     <category-search  :reload="0" />
+                  @else
+                     <location  />
+                  @endif                        
+               </div>
             </div>
          </div>
       </div>
