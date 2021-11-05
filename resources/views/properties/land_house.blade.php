@@ -16,7 +16,7 @@
          </div>
          <div class="clearfix"></div>
          <div class="{{ $property->images->count() >= 4 ? 'col-md-8' : 'col-md-12' }}  position-relative bg-white ">
-            <a href="#" class="full-image img card-img galleries " style="background-image: url('{{ $property->image }}')"></a>
+            <a href="#" class=" img card-img galleries " style="background-image: url('{{ $property->image }}')"></a>
          </div>
          @if ($property->images->count() >= 4)
          <div class="col-md-4 ">
@@ -245,9 +245,9 @@
 @section('inline-scripts')
 jQuery(function() {
 $(".full-image").on('click',function(e){
-e.preventDefault()
-$("#content").addClass('d-')
-$('.gallery-images').removeClass('d-none')
+   e.preventDefault()
+   $('.gallery-images').removeClass('d-none')
+   console.log(true)
 })
 $('.close-icon').on('click',function(){
 $('.gallery-images').addClass('d-none')
