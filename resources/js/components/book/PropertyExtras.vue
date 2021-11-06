@@ -1,8 +1,8 @@
 <template>
   <div class=" bg-white mt-2">
-    <h3 class="card-title  p-3 border-bottom mb-0">
+    <h4 class="card-title  p-3 border-bottom mb-0">
       You may be intrested in
-    </h3>
+    </h4>
     <div class="card-body pt-0">
       <div
         class="  bg-transparent d-flex justify-content-between p-0 align-items-center"

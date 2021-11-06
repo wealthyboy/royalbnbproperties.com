@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="bg-white ">
-      <div class="card-title border-bottom p-3">Your Booking Details</div>
+      <div class="card-title border-bottom p-3 text-size-1-big">
+        Your Booking Details
+      </div>
       <div>
         <ul class="list-unstyled mb-2 p-3">
           <li class="d-flex justify-content-between  mb-3 lh-22">
@@ -26,7 +28,9 @@
       </div>
     </div>
     <div class="bg-white mt-2">
-      <div class="card-title border-bottom p-3">Price Details</div>
+      <div class="card-title border-bottom p-3 text-size-1-big">
+        Price Details
+      </div>
 
       <div
         v-for="booking in bookings"

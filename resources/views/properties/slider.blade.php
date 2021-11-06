@@ -11,7 +11,8 @@
    background-color: rgba(0,0,0,.5);
    cursor: pointer;" >
    <div style="" class="">
-      <button style="z-index: 1; right:10px;" class="close-icon  cursor-pointer fa-2x position-absolute"><i class="fal fa-times"></i></button>
+      <button style="z-index: 2; right:10px; top: 10px;" class="close-icon  cursor-pointer raised position-absolute"><i class="fal fa-times"></i></button>
+   
       <div id="gallery-images" class="carousel slide carousel-fade" data-ride="carousel">
          <ol class="carousel-indicators">
             @foreach($property->images  as $key => $image)

@@ -13,7 +13,7 @@
         <booking-login />
 
         <div class=" bg-white ">
-          <h4 class="card-title p-3 border-bottom">Who's checking in?</h4>
+          <h3 class="card-title p-3 border-bottom">Who's checking in?</h3>
           <div class="card-body pt-0">
             <div class="form-row">
               <div class="form-group bmd-form-group col-6">

@@ -8,7 +8,7 @@
    <div class="container">
       <div class="row no-gutters bg-white">
          <div class="col-lg-8">
-            <div class="bg-white p-3 bold">
+            <div class="bg-white p-3 bold text-size-1-big">
                <div>{{ $property->name }}</div>
             </div>
          </div>

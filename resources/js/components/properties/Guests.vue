@@ -29,7 +29,7 @@
             disabled=""
             aria-label="decrease value"
             aria-describedby=""
-            class="mr-3 cursor-pointer add-subtract  min-adults"
+            class="mr-3   raised cursor-pointer add-subtract  min-adults"
             data-name="adults"
             data-math="minus"
           >
@@ -42,7 +42,7 @@
             data-math="add"
             data-name="adults"
             data-number="1"
-            class="ml-3 cursor-pointer add-subtract"
+            class="ml-3 raised cursor-pointer add-subtract"
             type="button"
           >
             <span class="">
@@ -63,7 +63,7 @@
             disabled=""
             aria-label="decrease value"
             aria-describedby=""
-            class="mr-3 min-children cursor-pointer  add-subtract"
+            class="mr-3 raised min-children cursor-pointer  add-subtract"
             data-name="children"
             data-math="minus"
           >
@@ -77,7 +77,7 @@
             data-math="add"
             data-number="1"
             data-name="children"
-            class="ml-3 cursor-pointer add-subtract"
+            class="ml-3 raised cursor-pointer add-subtract"
             type="button"
           >
             <span class="">
@@ -100,7 +100,7 @@
             aria-describedby=""
             data-math="minus"
             data-name="rooms"
-            class="mr-3 min-rooms cursor-pointer add-subtract"
+            class="mr-3 raised min-rooms cursor-pointer add-subtract"
           >
             <span class=""><i class="fas fa-minus"></i></span>
           </button>
@@ -112,7 +112,7 @@
             data-math="add"
             data-number="0"
             data-name="rooms"
-            class="ml-3 cursor-pointer add-subtract"
+            class="ml-3 raised cursor-pointer add-subtract"
             type="button"
           >
             <span class="">

@@ -1,12 +1,14 @@
 <template>
   <div class="row border-bottom  mb-1 mt-1 pl-1 pb-1">
     <div class="col-md-3 position-relative">
-      <div>
-        <img :src="room.image_m" class="img  img-fluid" />
+      <div class="owl-carousel owl-theme">
+        <div class="item" :key="image.id" v-for="image in room.images">
+          <img :src="image.image_m" class="img  img-fluid" />
+        </div>
       </div>
     </div>
     <div class="col-md-7">
-      <div class="card-title">
+      <div class="card-title bold text-size-1-big">
         <a @click.prevent="showRoom(room)" href="#">{{ room.name }}</a>
       </div>
       <div class="text-size-2 text-gold">
@@ -145,25 +147,25 @@
     >
       <div class="container">
         <div class="">
-          <div class="">
+          <div class="p-2 border-bottom">
+            <h3 class="bold">Apartment Information</h3>
+
             <button
               @click="lunchModal = !lunchModal"
-              style="z-index: 1; right:10px;"
-              class="close-icon  cursor-pointer fa-2x position-absolute"
+              style="z-index: 1; right:10px; top: 15px"
+              class="close-icon  cursor-pointer fa-1x position-absolute raised"
             >
               <i class="fal fa-times"></i>
             </button>
-
-            <h3 class="ml-3">Apartment Information</h3>
           </div>
         </div>
         <div class="row mt-2">
           <div class="col-md-4">
-            <div class="card-title">
+            <div class="card-title  bold text-size-1-big">
               <a @click.prevent="showRoom(room)" href="#">{{ room.name }}</a>
             </div>
             <div class="d-flex  flex-column">
-              <div class="position-relative">
+              <div class="position-relative mb-2">
                 <span class="position-absolute svg-icon-section">
                   <svg>
                     <use xlink:href="#bedrooms-icon"></use>
@@ -173,7 +175,7 @@
                   >{{ room.no_of_rooms }} Bedrooms</span
                 >
               </div>
-              <div class="position-relative">
+              <div class="position-relative mb-2">
                 <span class="position-absolute svg-icon-section">
                   <svg>
                     <use xlink:href="#bathroom-icon"></use>
@@ -181,7 +183,7 @@
                 </span>
                 <span class="svg-icon-text">{{ room.toilets }} bathrooms</span>
               </div>
-              <div class="position-relative">
+              <div class="position-relative mb-2">
                 <span class="position-absolute svg-icon-section">
                   <svg>
                     <use xlink:href="#sleeps-icon"></use>
@@ -191,25 +193,22 @@
               </div>
             </div>
             <div class="facilities">
-              <div class="card-title">
-                <a href="#">Amenities </a>
-              </div>
+              <h4 class="card-title bold text-size-1-big">
+                Amenities
+              </h4>
               <div
                 :key="apartment_facility.id"
                 v-for="apartment_facility in room.apartment_facilities"
               >
-                <h3>{{ apartment_facility.parent.name }}</h3>
-                <div></div>
+                <div>{{ apartment_facility.parent.name }}</div>
               </div>
             </div>
           </div>
           <div class="col-md-8">
-            <div>
-              <carousel>
-                <div :key="image.id" v-for="image in room.images">
-                  <img :src="image.image" alt="" />
-                </div>
-              </carousel>
+            <div class="room-carousel owl-carousel owl-theme">
+              <div class="item" :key="image.id" v-for="image in room.images">
+                <img :src="image.image" class="img  img-fluid" />
+              </div>
             </div>
           </div>
         </div>
@@ -218,7 +217,6 @@
   </div>
 </template>
 <script>
-import Carousel from "vue-owl-carousel";
 // optional style for arrows & dots
 
 export default {
@@ -259,9 +257,27 @@ export default {
       },
     };
   },
-  components: {
-    Carousel,
+  mounted() {
+    jQuery(function() {
+      $(".room-carousel").owlCarousel({
+        margin: 10,
+        nav: true,
+        dots: false,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 1,
+          },
+          1000: {
+            items: 1,
+          },
+        },
+      });
+    });
   },
+  components: {},
   methods: {
     sum(arr) {
       return arr.reduce((a, b) => parseInt(a) + parseInt(b), 0);
@@ -269,6 +285,24 @@ export default {
     showRoom(room) {
       this.lunchModal = !this.lunchModal;
       this.showSlider = true;
+      jQuery(function() {
+        $(".room-carousel").owlCarousel({
+          margin: 10,
+          nav: true,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 1,
+            },
+            1000: {
+              items: 1,
+            },
+          },
+        });
+      });
     },
     getApartmentQuantity(e, ap) {
       this.guests = ap.max_adults + ap.max_children;
@@ -300,8 +334,6 @@ export default {
 
       let aps = this.aps;
       let t = this.total;
-      console.log(total, this.total);
-
       this.$emit("qtyChange", { total: t, aps: aps });
       // Turn on extra services
     },

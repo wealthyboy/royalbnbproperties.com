@@ -160,6 +160,26 @@ export default {
     this.stays = this.nights;
     this.roomsAv = this.apartments;
   },
+  mounted() {
+    jQuery(function() {
+      $(".owl-carousel").owlCarousel({
+        margin: 10,
+        nav: true,
+        dots: false,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 1,
+          },
+          1000: {
+            items: 1,
+          },
+        },
+      });
+    });
+  },
   components: {
     Pickr,
     Guests,
@@ -188,6 +208,24 @@ export default {
           this.roomsAv = response.data.data;
           this.stays = response.data.nights;
           this.propertyLoading = false;
+          jQuery(function() {
+            $(".room-carousel").owlCarousel({
+              margin: 10,
+              nav: true,
+              dots: false,
+              responsive: {
+                0: {
+                  items: 1,
+                },
+                600: {
+                  items: 1,
+                },
+                1000: {
+                  items: 1,
+                },
+              },
+            });
+          });
         })
         .catch((error) => {});
     },
