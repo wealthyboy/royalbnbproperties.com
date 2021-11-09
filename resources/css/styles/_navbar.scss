@@ -12,7 +12,7 @@
   .navbar-nav {
     .nav-item .nav-link {
       position: relative;
-      color: inherit;
+      color: $white;
       padding: $padding-general-x;
       font-weight: $font-weight-extra-bold;
       font-size: $mdb-btn-font-size-base;
@@ -154,6 +154,6 @@
 }
 
 // for demo
-#navbar .navbar {
-  border-radius: 0;
+.navbar {
+  background-color: $gold-100 !important;
 }

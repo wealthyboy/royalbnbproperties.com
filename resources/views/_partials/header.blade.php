@@ -32,6 +32,10 @@
             @guest
 
             <li class="nav-item">
+                <location  :reload="1" />
+            </li>
+
+            <li class="nav-item">
             <a  data-toggle="modal" href="#" data-to="login"  data-target="#loadModal" class="nav-link auth-form">
                 <i class="fal fa-sign-in"></i>
                 Login

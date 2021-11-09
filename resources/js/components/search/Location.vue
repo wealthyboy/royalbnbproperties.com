@@ -2,10 +2,10 @@
   <form method="GET" action="/property/search">
     <div class="form-row">
       <div
-        class="form-group  pt-2 pb-2 form-border   search col-md-12 bmd-form-group"
+        class="form-group  form-border   search col-md-12 bmd-form-group m-0"
       >
         <div class="input-group input-group-lg">
-          <div class="input-group-prepend ml-2 ">
+          <div class="input-group-prepend">
             <span class="input-group-text" id="">
               <i class="fal fa-search"></i>
             </span>

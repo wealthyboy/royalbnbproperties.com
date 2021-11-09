@@ -6,10 +6,10 @@
    @include('_partials.header_styles')
    <body>
       <div id="app"  class="app">
-         <nav class="navbar  fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+         <nav class="navbar  navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
             @include('_partials.header')
          </nav>
-         <div class="main  index-page">
+         <div  id="content" class="main  index-page">
             @yield('content')
          </div>
          @include('_partials.footer')
