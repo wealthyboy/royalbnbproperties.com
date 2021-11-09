@@ -53,75 +53,92 @@
                   <div style="z-index: 2" class="content z-index-1 text-white position-absolute bottom-0">
                      <h2 class="card-title text-white text-uppercase">{{ $banner->title }}</h2>
                      <p class="text-white">{{ $banner->description }}</p>
-      <a href="{{ $banner->link }}" class="btn  bold btn-primary btn-round">
-      <i class=""></i> View More
-      </a>
-      </div>
-      </div>
-      </div>
-      </div>
+                     <a href="{{ $banner->link }}" class="btn  bold btn-primary btn-round">
+                     <i class=""></i> View More
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
       </a>
       @endforeach
    </div>
    @endif
-   <section data-animated-id="2" class="wprt-section how-we-build mb-3">
+   <section data-animated-id="2" class="wprt-section how-we-build mt-3 mb-3">
       <div class="row">
          <div class="col-md-12">
-            <div class="wprt-spacer" data-desktop="70" data-mobi="60" data-smobi="60" style="height:70px"></div>
-            <h2 class="text-center margin-bottom-10">Why choose us</h2>
-            <div class="wprt-lines style-2 custom-1">
-               <div class="line-1"></div>
-            </div>
-            <p class="wprt-subtitle text-center">We exist to keep our clients always satisfied; our collaborators happy; our staffs motivated; our management proud and celebrated; our brand competitive and progressive. To achieve the above, we pride ourselves on these Values;</p>
+            <h2 class="text-center  bold text-uppercase">Why choose us</h2>
+            
+            <p class="subtitle text-center">We exist to keep our clients always satisfied.  we pride ourselves on these Values.</p>
          </div>
          <!-- /.col-md-12 -->
          <div class="col-md-3">
             <div class="wprt-icon-box outline rounded icon-effect-3 width-90">
-               <div class="icon-wrap">
-                  <span class="dd-icon icon-engineer"></span>
+               <div class="icon-wrap bg-primary text-center">
+                  <svg
+                     id=""
+                  >
+                     <use xlink:href="#groups-icon"></use>
+                  </svg>
                </div>
-               <div class="content-wrap">
-                  <h3 class="dd-title font-size-18">Integrity</h3>
-                  <p>We keep our promises – we walk the talk.
-                   We are ethical, trustworthy and reliable in all our actions.
-                  </p>
-               </div>
+               
+            </div>
+            <div class="content-wrap">
+               <h3 class="dd-title bold text-center">Integrity</h3>
+               <p>We keep our promises – we walk the talk.
+                  We are ethical, trustworthy and reliable in all our actions.
+               </p>
             </div>
          </div>
          <!-- /.col-md-4 -->
          <div class="col-md-3">
-            <div class="wprt-icon-box outline rounded icon-effect-3 width-90">
-               <div class="icon-wrap">
-                  <span class="dd-icon icon-ruler-1"></span>
+            <div class="wprt-icon-box outline rounded">
+               <div class="icon-wrap bg-primary text-center">
+                  <svg
+                     id=""
+                  >
+                     <use xlink:href="#groups-icon"></use>
+                  </svg>
                </div>
-               <div class="content-wrap">
-                  <h3 class="dd-title font-size-18"><a href="#">Competence </a></h3>
-                  <p>We offer reliable information to our clients that will aid effective and efficient decision making.</p>
-               </div>
+               
+            </div>
+            <div class="content-wrap">
+               <h3 class="bold text-center">Competence </h3>
+               <p>We offer reliable information to our clients that will aid effective and efficient decision making.</p>
             </div>
          </div>
          <!-- /.col-md-4 -->
          <div class="col-md-3">
-            <div class="wprt-icon-box outline rounded icon-effect-3 width-90">
-               <div class="icon-wrap">
-                  <span class="dd-icon icon-garden-fence"></span>
+            <div class="wprt-icon-box outline rounded  icon-effect-3 width-90">
+               <div class="icon-wrap bg-primary text-center">
+               <svg
+                  id=""
+               >
+                  <use xlink:href="#groups-icon"></use>
+               </svg>
                </div>
-               <div class="content-wrap">
-                  <h3 class="dd-title font-size-18">Versatility </h3>
-                  <p>We are professional and flexible to our clients’ dynamic needs.</p>
-               </div>
+               
+            </div>
+            <div class="content-wrap">
+               <h3 class="dd-title bold text-center text-center">Versatility </h3>
+               <p>We are professional and flexible to our clients’ dynamic needs.</p>
             </div>
          </div>
 
          <div class="col-md-3">
             <div class="wprt-icon-box outline rounded icon-effect-3 width-90">
-               <div class="icon-wrap">
-                  <span class="dd-icon icon-garden-fence"></span>
+               <div class="icon-wrap bg-primary text-center">
+                  <svg
+                     id=""
+                  >
+                     <use xlink:href="#groups-icon"></use>
+                  </svg>
                </div>
-               <div class="content-wrap">
-                  <h3 class="dd-title font-size-18">Team work</h3>
-                  <p>We work as a single block. We commit to achieving common goal.</p>
-               </div>
+               
+            </div>
+            <div class="content-wrap">
+               <h3 class="dd-title bold text-center">Team work</h3>
+               <p>We work as a single block. We commit to achieving common goal.</p>
             </div>
          </div>
          <!-- /.col-md-4 -->
@@ -134,9 +151,9 @@
    @if($cities->count())
    <section  class="explore-cities mb-3">
       <div class="row bg-primary">
-         <div class="col-md-3">
-            <div>
-               <h3 class="bold">Explore Best Cities</h3>
+         <div class="col-md-3 text-white d-flex align-items-center justify-content-center">
+            <div class="">
+               <h3 class="bold text-white">Explore Best Cities</h3>
                <p>Here's where to go if you're looking to plan a city break itinerary filled with memorable cultural experiences.</p>
             </div>
             <div class="pwh_bg"></div>
@@ -144,11 +161,11 @@
          <div class="col-md-8">
             <div class="owl-carousel owl-them">
                @foreach( $cities as $city )
-               <div class="item">
+               <div class="item position-relative">
                   <a href="/properties/location/{{ $city->slug }}">
                   <img src="{{ $city->image }}" alt="Properties in {{ $city->name }}" class="img-raised  ">
                   </a>
-                  <div class="fav-icon position-absolute">
+                  <div class=" position-absolute">
                      <h4 class="text-black bold">{{ $city->name }}</h4>
                   </div>
                </div>
@@ -158,18 +175,17 @@
       </div>
    </section>
    @endif
-   <section class="bg-single-image-02  mt-3 bg-accent py-lg-13 py-11" data-animated-id="3">
-      <div class="row">
+   <section class="bg-single-image-02  mt-3 bg-accent pt-5 pb-5" data-animated-id="3">
+      <div class="row bg-gray">
          <div class="col-ld-6 col-sm-7 fadeInLeft animated" data-animate="fadeInLeft">
-            <div class="pl-6 border-4x border-left border-primary">
-               <h2 class="text-heading lh-15 fs-md-32 fs-25">For more information about our services,<span class="text-primary"> get in touch</span> with our expert consultants</h2>
-               <p class="lh-2 fs-md-15 mb-0">10 new offers every day. 350 offers on site, Trusted by a community of thousands of users.</p>
+            <div class=" border-4x  border-primary">
+               <h2 class="text-heading bold">For more information about our services,<span class="text-gold"> get in touch</span> with our expert consultants</h2>
             </div>
          </div>
          <div class="col-ld-6 col-sm-5 text-center mt-sm-0 mt-8 fadeInRight animated" data-animate="fadeInRight">
             <i class="fal fa-phone fs-40 text-primary"></i>
             <p class="fs-13 font-weight-500 letter-spacing-173 text-uppercase lh-2 mt-3">Call for help now!</p>
-            <p class="fs-md-42 fs-32 font-weight-600 text-secondary lh-1">1900 68668</p>
+            <p class="fs-md-42 fs-32 font-weight-600 text-secondary lh-1">{{ $system_settings->store_phone }}</p>
             <a href="home-03.html#" class="btn btn-lg btn-primary mt-2 px-10">Contact us</a>
          </div>
       </div>
