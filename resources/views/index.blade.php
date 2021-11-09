@@ -91,11 +91,9 @@
                   <div class="line-1"></div>
             </div>
 
-            <div class="wprt-spacer" data-desktop="25" data-mobi="25" data-smobi="20" style="height:25px"></div>
 
-            <p class="wprt-subtitle text-center">At the Construction Company, Building is passion. With every project we undertake with a true love of what we do to make our Customers’ vision a reality.</p>
+            <p class="wprt-subtitle text-center">We exist to keep our clients always satisfied; our collaborators happy; our staffs motivated; our management proud and celebrated; our brand competitive and progressive. To achieve the above, we pride ourselves on these Values;</p>
 
-            <div class="wprt-spacer" data-desktop="50" data-mobi="40" data-smobi="40" style="height:50px"></div>
          </div><!-- /.col-md-12 -->
 
          <div class="col-md-4">
@@ -104,12 +102,11 @@
                      <span class="dd-icon icon-engineer"></span>
                   </div>
                   <div class="content-wrap">
-                     <h3 class="dd-title font-size-18"><a href="#">Construction Manager</a></h3>
+                     <h3 class="dd-title font-size-18"><a href="#">Integrity</a></h3>
                      <p>The Construction has the ability to serve your needs for Construction Manager/General Contractor (CMGC) projects.</p>
                   </div>
             </div>
 
-            <div class="wprt-spacer" data-desktop="0" data-mobi="30" data-smobi="30" style="height:0px"></div>
          </div><!-- /.col-md-4 -->
 
          <div class="col-md-4">
@@ -118,12 +115,11 @@
                      <span class="dd-icon icon-ruler-1"></span>
                   </div>
                   <div class="content-wrap">
-                     <h3 class="dd-title font-size-18"><a href="#">Design and Build</a></h3>
+                     <h3 class="dd-title font-size-18"><a href="#">Competence </a></h3>
                      <p>Design Build is one of the many strengths of The Construction Company and we are viewed as a leader in the construction industry.</p>
                   </div>
             </div>
 
-            <div class="wprt-spacer" data-desktop="0" data-mobi="30" data-smobi="30" style="height:0px"></div>
          </div><!-- /.col-md-4 -->
 
          <div class="col-md-4">
@@ -132,14 +128,13 @@
                      <span class="dd-icon icon-garden-fence"></span>
                   </div>
                   <div class="content-wrap">
-                     <h3 class="dd-title font-size-18"><a href="#">Safety is Key</a></h3>
+                     <h3 class="dd-title font-size-18"><a href="#">Versatility </a></h3>
                      <p>Our Company is dedicated to achieving safety excellence by promoting a culture that effectively identifies and manages risk through recognition, evaluation.</p>
                   </div>
             </div>
          </div><!-- /.col-md-4 -->
 
          <div class="col-md-12">
-            <div class="wprt-spacer" data-desktop="70" data-mobi="60" data-smobi="60" style="height:70px"></div>
          </div><!-- /.col-md-12 -->
       </div><!-- /.row -->
    </section>

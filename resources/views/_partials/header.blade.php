@@ -24,16 +24,13 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             
-            <li class="nav-item">
-            <a href="javascript:;" class="nav-link">
-                <i class="material-icons"></i>
-            </a>
-            </li>
-            @guest
-
+            
             <li class="nav-item">
                 <location  :reload="1" />
             </li>
+            @guest
+
+            
 
             <li class="nav-item">
             <a  data-toggle="modal" href="#" data-to="login"  data-target="#loadModal" class="nav-link auth-form">
