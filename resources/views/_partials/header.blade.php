@@ -5,6 +5,9 @@
             <img src="{{ $system_settings->logo_path() }}" class="img-fluid">
         </div>
     </a>
+    <div class="d-block d-sm-none  ">
+        <location  :reload="1" />
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="sr-only">Toggle navigation</span>
         <span class="navbar-toggler-icon"></span>
@@ -12,8 +15,10 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     </div>
+    
     <div class="collapse navbar-collapse">
        <ul class="navbar-nav navbar-center ml-auto">
+           
            @foreach( $global_categories   as  $category)
             <li class="nav-item">
                 <a href="/properties/{{ $category->slug }}" class="nav-link">
@@ -25,7 +30,7 @@
         <ul class="navbar-nav ml-auto">
             
             
-            <li class="nav-item">
+            <li class="nav-item  d-none d-lg-block">
                 <location  :reload="1" />
             </li>
             @guest

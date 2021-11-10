@@ -6,7 +6,7 @@
        <ul class="pull-center">
             @foreach($footer_info as $info)
                 <li>
-                    <a href="#">
+                    <a href="{{ $info->link }}">
                     {{ title_case($info->title) }}
                     </a>
                 </li>  
