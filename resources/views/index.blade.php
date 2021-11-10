@@ -64,7 +64,7 @@
       @endforeach
    </div>
    @endif
-   <section data-animated-id="2" class="wprt-section how-we-build mt-3 mb-3">
+   <section data-animated-id="2" class="wprt-section how-we-build mt-5 mb-5">
       <div class="row">
          <div class="col-md-12">
             <h2 class="text-center  bold text-uppercase">Why choose us</h2>
@@ -177,8 +177,11 @@
    <section class="bg-single-image-02  mt-3 bg-accent pt-5 pb-5" data-animated-id="3">
       <div class="row bg-gray">
          <div class="col-ld-6 col-sm-7 fadeInLeft animated" data-animate="fadeInLeft">
-            <div class=" border-4x  border-primary">
-               <h2 class="text-heading bold">For more information about our services,<span class="text-gold"> get in touch</span> with our expert consultants</h2>
+            <div class="border-primary">
+               <h2 class="text-heading bold">
+                  For more information about our services,
+                  <span class="text-gold"> get in touch</span> with our expert consultants
+               </h2>
             </div>
          </div>
          <div class="col-ld-6 col-sm-5 text-center mt-sm-0 mt-8 fadeInRight animated" data-animate="fadeInRight">
