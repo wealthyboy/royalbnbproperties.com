@@ -59,7 +59,7 @@ class PropertiesController extends Controller
             $builder->where('categories.slug',$category->slug);
         })
         ->filter($request,  $this->getFilters($attributes))
-        ->latest()->paginate(10);
+        ->latest()->paginate(20);
         $properties->appends(request()->all());
         $saved =  $this->saved();
         $properties->load('categories');
@@ -117,7 +117,7 @@ class PropertiesController extends Controller
             $builder->where('locations.slug',$location->slug);
         })
         ->filter($request,  $this->getFilters($attributes))
-        ->latest()->paginate(3);
+        ->latest()->paginate(20);
         $properties->appends(request()->all());
         $total = $properties->total();
 
