@@ -68,36 +68,35 @@
       <div class="row">
          <div class="col-md-12">
             <h2 class="text-center  bold text-uppercase">Why choose us</h2>
-            
             <p class="subtitle text-center">We exist to keep our clients always satisfied.  we pride ourselves on these Values.</p>
          </div>
          <!-- /.col-md-12 -->
          <div class="col-md-3">
-            <div class="wprt-icon-box outline rounded icon-effect-3 width-90">
-               <div class="icon-wrap bg-primary text-center">
+            <div class="wprt-icon-box">
+               <div class="icon-wrap bg-primary  d-flex justify-content-center align-items-center  text-center">
                   <svg
                      id=""
                   >
                      <use xlink:href="#groups-icon"></use>
                   </svg>
                </div>
-               
             </div>
             <div class="content-wrap">
                <h3 class="dd-title bold text-center">Integrity</h3>
-               <p>We keep our promises – we walk the talk.
+               <p>
+                  We keep our promises – we walk the talk.
                   We are ethical, trustworthy and reliable in all our actions.
                </p>
             </div>
          </div>
          <!-- /.col-md-4 -->
          <div class="col-md-3">
-            <div class="wprt-icon-box outline rounded">
-               <div class="icon-wrap bg-primary text-center">
+            <div class="wprt-icon-box">
+               <div class="icon-wrap bg-primary   d-flex justify-content-center align-items-center  text-center">
                   <svg
                      id=""
                   >
-                     <use xlink:href="#groups-icon"></use>
+                     <use xlink:href="#question-icon"></use>
                   </svg>
                </div>
                
@@ -109,8 +108,8 @@
          </div>
          <!-- /.col-md-4 -->
          <div class="col-md-3">
-            <div class="wprt-icon-box outline rounded  icon-effect-3 width-90">
-               <div class="icon-wrap bg-primary text-center">
+            <div class="wprt-icon-box">
+               <div class="icon-wrap bg-primary  d-flex justify-content-center align-items-center  text-center">
                <svg
                   id=""
                >
@@ -126,8 +125,8 @@
          </div>
 
          <div class="col-md-3">
-            <div class="wprt-icon-box outline rounded icon-effect-3 width-90">
-               <div class="icon-wrap bg-primary text-center">
+            <div class="wprt-icon-box">
+               <div class="icon-wrap bg-primary  d-flex justify-content-center align-items-center  text-center">
                   <svg
                      id=""
                   >
@@ -158,14 +157,14 @@
             </div>
             <div class="pwh_bg"></div>
          </div>
-         <div class="col-md-8">
+         <div class="col-md-8 pt-5 pb-5">
             <div class="owl-carousel owl-them">
                @foreach( $cities as $city )
                <div class="item position-relative">
                   <a href="/properties/location/{{ $city->slug }}">
                   <img src="{{ $city->image }}" alt="Properties in {{ $city->name }}" class="img-raised  ">
                   </a>
-                  <div class=" position-absolute">
+                  <div class="position-absolute">
                      <h4 class="text-black bold">{{ $city->name }}</h4>
                   </div>
                </div>

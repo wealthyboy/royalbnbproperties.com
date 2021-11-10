@@ -240,12 +240,14 @@ div.items-ad {
   font-size: 12px;
   width: 100%;
 }
+
 .uploadloaded_image .upload-text a,
 #j-drop .upload-text a {
-  color: #333;
+  color: rgb(85, 83, 83);
   display: inline-block;
   width: 100%;
 }
+
 .uploadloaded_image .upload-text img,
 #j-drop .upload-text img {
   max-width: 65px;

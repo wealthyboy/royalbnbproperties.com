@@ -79,6 +79,26 @@ span.svg-icon-text {
   margin-left: 1.7rem;
 }
 
+.wprt-icon-box {
+  width: 80px;
+  height: 80px;
+}
+
+.wprt-icon-box .icon-wrap svg {
+  width: 70px;
+  height: 60px;
+}
+
+.wprt-icon-box .icon-wrap {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 40px;
+  width: 80px;
+  height: 80px;
+}
+
 .sidebar-toggle.sidebar-opened {
   left: 280px;
   z-index: 9000;
