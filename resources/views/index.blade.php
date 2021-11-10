@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @if ($sliders->count())
-<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel  zoomIn animated slide carousel-fade" data-ride="carousel">
    <ol class="carousel-indicators">
       @foreach($sliders as $key =>  $slider)
       <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : ''}}"></li>
@@ -41,7 +41,7 @@
 @endif
 <div class="container-fluid mt-3 position-relative">
    @if($banners->count())
-   <div data-animated-id="1" class="row no-gutters zoomIn animated">
+   <div data-animated-id="1" class="row no-gutters fadeInRight animated">
       <div class="col-md-12 mb-4">
          <h3 class="bold">Browse by category</h3>
       </div>
