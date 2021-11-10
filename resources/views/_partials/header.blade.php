@@ -5,9 +5,7 @@
             <img src="{{ $system_settings->logo_path() }}" class="img-fluid">
         </div>
     </a>
-    <div class="d-block d-sm-none  ">
-        <location  :reload="1" />
-    </div>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="sr-only">Toggle navigation</span>
         <span class="navbar-toggler-icon"></span>

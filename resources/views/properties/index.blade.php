@@ -7,7 +7,7 @@
          <div class="row">
             <div class="col-md-9 ml-auto mr-auto">
                <div class="search-form">
-                  @if( isset($category) && strtolower($category->name)  == 'short-let')
+                  @if( isset($category) && strtolower($category->name)  == 'apartments')
                      <category-search  :reload="0" />
                   @else
                      <location  />

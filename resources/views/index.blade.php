@@ -18,7 +18,7 @@
                      <p>{{ $slider->description }}</p>
                      <br>
                      <div class="buttons">
-                        <a href="" class="btn rounded btn-primary btn-lg">
+                        <a href="{{ $slider->link }}" class="btn rounded btn-primary btn-lg">
                         Read More
                         </a>
                      </div>
@@ -71,7 +71,7 @@
             <p class="subtitle text-center">We exist to keep our clients always satisfied.  we pride ourselves on these Values.</p>
          </div>
          <!-- /.col-md-12 -->
-         <div class="col-md-3">
+         <div class="col-md-3 col-6">
             <div class="wprt-icon-box">
                <div class="icon-wrap bg-primary  d-flex justify-content-center align-items-center  text-center">
                   <svg
@@ -90,7 +90,7 @@
             </div>
          </div>
          <!-- /.col-md-4 -->
-         <div class="col-md-3">
+         <div class="col-md-3 col-6">
             <div class="wprt-icon-box">
                <div class="icon-wrap bg-primary   d-flex justify-content-center align-items-center  text-center">
                   <svg
@@ -107,7 +107,7 @@
             </div>
          </div>
          <!-- /.col-md-4 -->
-         <div class="col-md-3">
+         <div class="col-md-3  col-6">
             <div class="wprt-icon-box">
                <div class="icon-wrap bg-primary  d-flex justify-content-center align-items-center  text-center">
                <svg
@@ -124,7 +124,7 @@
             </div>
          </div>
 
-         <div class="col-md-3">
+         <div class="col-md-3  col-6">
             <div class="wprt-icon-box">
                <div class="icon-wrap bg-primary  d-flex justify-content-center align-items-center  text-center">
                   <svg
