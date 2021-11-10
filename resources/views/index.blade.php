@@ -77,7 +77,7 @@
                   <svg
                      id=""
                   >
-                     <use xlink:href="#groups-icon"></use>
+                     <use xlink:href="#check-icon"></use>
                   </svg>
                </div>
             </div>
@@ -113,7 +113,7 @@
                <svg
                   id=""
                >
-                  <use xlink:href="#groups-icon"></use>
+                  <use xlink:href="#check-icon"></use>
                </svg>
                </div>
                
