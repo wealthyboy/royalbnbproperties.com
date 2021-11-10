@@ -107,6 +107,8 @@ Route::get('/mailable', function () {
 });
 
 
+
+
 Route::get('account', 'Account\AccountController@index');
 Route::resource('profile', 'Profile\ProfileController',['names' => 'profiles']);
 Route::post('password/reset/link',            'Auth\ForgotPasswordController@sendResetLinkEmail');
@@ -123,6 +125,8 @@ Route::post('register/listings',   'Auth\RegisterMerchantController@store');
 Route::get('login/{service}',           'Auth\SocialLoginController@redirect');
 Route::get('login/{service}/callback',  'Auth\SocialLoginController@callback');
 Route::post('login',                    'Auth\LoginController@login');
+Route::get('pages/{information}',       'Information\InformationController@show');
+
 
 Route::get('apartments/{location}',     'Apartments\ApartmentsController@index');
 Route::get('apartment/{property}',       'Apartments\ApartmentsController@show');
@@ -148,6 +152,8 @@ Route::get('properties/location/{location}', 'Properties\PropertiesController@lo
 Route::get('auto-complete', 'Properties\PropertiesController@autoComplete');
 Route::get('property/{property}', 'Properties\PropertiesController@show');
 Route::get('properties/{category}', 'Properties\PropertiesController@index');
+
+
 
 
 Route::get('listings', 'Listings\ListingsController@index');
