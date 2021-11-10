@@ -66,7 +66,7 @@
    @endif
    <section data-animated-id="2" class="wprt-section how-we-build mt-5 mb-5">
       <div class="row">
-         <div class="col-md-12">
+         <div class="col-md-12 mb-3">
             <h2 class="text-center  bold text-uppercase">Why choose us</h2>
             <p class="subtitle text-center">We exist to keep our clients always satisfied.  we pride ourselves on these Values.</p>
          </div>
