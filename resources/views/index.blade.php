@@ -176,19 +176,17 @@
    @endif
    <section class="bg-single-image-02  mt-3 bg-accent pt-5 pb-5" data-animated-id="3">
       <div class="row bg-gray">
-         <div class="col-ld-6 col-sm-7 fadeInLeft animated" data-animate="fadeInLeft">
-            <div class="border-primary">
-               <h2 class="text-heading bold">
-                  For more information about our services,
-                  <span class="text-gold"> get in touch</span> with our expert consultants
-               </h2>
-            </div>
+        <div class="col-md-12 mb-3">
+            <h2 class="text-center  bold text-uppercase">For more information about our services</h2>
+            <p class="subtitle text-center text-size-1-big bold">  
+               <span class="text-gold"> Get in touch</span> with our expert consultants
+            </p>
          </div>
-         <div class="col-ld-6 col-sm-5 text-center mt-sm-0 mt-8 fadeInRight animated" data-animate="fadeInRight">
-            <i class="fal fa-phone fs-40 text-primary"></i>
-            <p class="fs-13 font-weight-500 letter-spacing-173 text-uppercase lh-2 mt-3">Call for help now!</p>
-            <p class="fs-md-42 fs-32 font-weight-600 text-secondary lh-1">{{ $system_settings->store_phone }}</p>
-            <a href="home-03.html#" class="btn btn-lg btn-primary mt-2 px-10">Contact us</a>
+         
+         <div class="col-lg-12 col-sm-5 text-center mt-sm-0 mt-8 fadeInRight animated" data-animate="fadeInRight">
+            <i class="fal fa-phone fa-2x text-primary"></i>
+            <p class="text-uppercase text-size-1-big   mt-3">Call for help now!</p>
+            <p class="text-size-2-big text-secondary text-gold bold mt-3">{{ $system_settings->store_phone }}</p>
          </div>
       </div>
    </section>
