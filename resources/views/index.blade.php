@@ -157,7 +157,7 @@
             </div>
             <div class="pwh_bg"></div>
          </div>
-         <div class="col-md-8 pt-5 pb-5">
+         <div class="col-md-8 pt-5 pb-4">
             <div class="owl-carousel owl-them">
                @foreach( $cities as $city )
                <div class="item position-relative banner-filter">
