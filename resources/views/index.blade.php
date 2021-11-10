@@ -160,12 +160,14 @@
          <div class="col-md-8 pt-5 pb-5">
             <div class="owl-carousel owl-them">
                @foreach( $cities as $city )
-               <div class="item position-relative">
+               <div class="item position-relative banner-filter">
                   <a href="/properties/location/{{ $city->slug }}">
                   <img src="{{ $city->image }}" alt="Properties in {{ $city->name }}" class="img-raised  ">
                   </a>
-                  <div class="position-absolute">
-                     <h4 class="text-black bold">{{ $city->name }}</h4>
+                  <div class="position-absolute  bottom-0 location-name">
+                     <a href="/properties/location/{{ $city->slug }}">
+                       <h4 class="text-white  ml-3 bold">{{ $city->name }}</h4>
+                     </a>
                   </div>
                </div>
                @endforeach
