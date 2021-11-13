@@ -159,6 +159,6 @@ const app = new Vue({
       animation: "slide",
     });
 
-    APP.animation.init();
+    // APP.animation.init();
   });
 })(jQuery);
