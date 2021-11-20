@@ -91,9 +91,6 @@ Route::get('/', 'HomeController@index');
 Auth::routes();
 
 
-
-
-
 Route::group(['middleware' => 'currencyByIp'], function(){
     Route::get('/', 'HomeController@home');
     Route::get('home', 'HomeController@index');
